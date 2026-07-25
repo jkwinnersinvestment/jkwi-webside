@@ -1,18 +1,53 @@
-function calculateInvestment(){
+// ==========================================
+// JK Winners Investment
+// Live WTI Oil Price
+// ==========================================
 
-let amount = Number(document.getElementById("amount").value);
+const API_KEY = "5RJ9MFDS8C6YE3S0";
 
-if(amount <= 0){
+async function loadWTI() {
 
-document.getElementById("result").innerHTML="Enter a valid amount";
+    const ticker = document.getElementById("commodityTicker");
 
-return;
+    try {
+
+        ticker.innerHTML = "Loading market data...";
+
+        const response = await fetch(
+            `https://www.alphavantage.co/query?function=WTI&interval=daily&apikey=${API_KEY}`
+        );
+
+        if (!response.ok) {
+            throw new Error("Network response was not OK");
+        }
+
+        const data = await response.json();
+
+        console.log(data);
+
+        if (!data.data || data.data.length === 0) {
+            ticker.innerHTML = "No market data available";
+            return;
+        }
+
+        const latest = data.data[0];
+
+        ticker.innerHTML = `
+            <span>🛢️ WTI CRUDE OIL</span>
+            <span>$${latest.value} / barrel</span>
+            <span>${latest.date}</span>
+        `;
+
+    } catch (error) {
+
+        console.error(error);
+
+        ticker.innerHTML = "Unable to load market data";
+
+    }
 
 }
 
-let estimated = amount * 1.15;
+loadWTI();
 
-document.getElementById("result").innerHTML =
-"Estimated Value: R" + estimated.toLocaleString();
-
-}
+setInterval(loadWTI, 3600000);
