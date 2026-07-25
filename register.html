@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Investor Account</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<div class="login-container">
+
+<div class="login-box">
+
+<img src="images/logo.png" class="login-logo">
+
+<h2>Create Investor Account</h2>
+
+<p>Join JK Winners Investment</p>
+
+<form action="/api/auth/register" method="POST">
+<input
+type="text"
+name="fullname"
+placeholder="Full Name"
+required>
+
+<input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
+
+<input type="text" id="idnumber" name="idnumber" placeholder="South African ID / Passport" required>
+
+<input type="email" id="email" name="email" placeholder="Email Address" required>
+
+<input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+
+<input type="password" id="password" name="password" placeholder="Password" required>
+
+<input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+
+<button type="submit">
+
+Create Account
+
+</button>
+
+</form>
+
+<div class="login-links">
+
+<a href="login.html">
+
+Already have an account?
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
