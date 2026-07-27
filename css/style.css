@@ -2206,4 +2206,127 @@ margin-bottom:20px;
 
 font-size:24px;
 
+}/*=================================
+MOBILE RESPONSIVE
+==================================*/
+
+@media (max-width: 768px){
+
+/* Navbar */
+
+.navbar{
+
+    padding:15px 20px;
+
+    flex-wrap:wrap;
+
+}
+
+/* Logo */
+
+.logo img{
+
+    width:45px;
+
+}
+
+.logo h2{
+
+    font-size:18px;
+
+}
+
+/* Hide desktop menu */
+
+.nav-menu{
+
+    display:none;
+
+}
+
+/* Contact button */
+
+.contact-btn{
+
+    padding:10px 18px;
+
+    font-size:14px;
+
+}
+
+/* Hero */
+
+.hero{
+
+    height:100vh;
+
+    padding:120px 20px 40px;
+
+}
+
+.hero-logo{
+
+    width:100px;
+
+}
+
+.hero h1{
+
+    font-size:38px;
+
+}
+
+.hero h4{
+
+    font-size:14px;
+
+    letter-spacing:3px;
+
+}
+
+.hero p{
+
+    font-size:16px;
+
+    line-height:1.7;
+
+}
+
+/* Buttons */
+
+.hero-buttons{
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.btn-primary,
+.btn-secondary{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+/* Market */
+
+.market-title{
+
+    text-align:center;
+
+    font-size:18px;
+
+}
+
+.market-ticker{
+
+    font-size:14px;
+
+    padding:12px;
+
+}
+
 }
