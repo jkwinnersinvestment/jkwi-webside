@@ -604,71 +604,91 @@ transform:translateY(-12px);
 }
 
 }
-/*==================================================
-SECTION 03 - STRATEGIC DIVISIONS
-==================================================*/
+/*==========================================
+OUR DIVISIONS
+==========================================*/
 
 .divisions{
-    padding:120px 8%;
-    background:#F8FBFF;
-}
 
-.container{
-    max-width:1400px;
-    margin:auto;
+    width:100%;
+    padding:100px 8%;
+    background:#f8fbff;
+
 }
 
 .section-heading{
+
     text-align:center;
-    margin-bottom:80px;
+    margin-bottom:60px;
+
 }
 
-.section-subtitle{
-    display:inline-block;
+.section-heading span{
+
     color:#009FE3;
-    font-size:14px;
+    font-size:15px;
     font-weight:700;
-    letter-spacing:3px;
+    letter-spacing:2px;
     text-transform:uppercase;
-    margin-bottom:20px;
+
 }
 
 .section-heading h2{
-    font-size:52px;
-    color:#1E293B;
-    font-weight:800;
-    margin-bottom:20px;
+
+    font-size:48px;
+    color:#111;
+    margin:15px 0;
+
 }
 
 .section-heading p{
-    max-width:850px;
+
+    max-width:700px;
     margin:auto;
+    color:#666;
     font-size:18px;
     line-height:1.8;
-    color:#6B7280;
-}
-
-/*======================
-GRID
-=======================*/
-
-.division-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:35px;
 
 }
 
-/*======================
+/*==========================================
+SLIDER
+==========================================*/
+
+.division-slider{
+
+    display:flex;
+    gap:25px;
+
+    overflow-x:auto;
+
+    scroll-snap-type:x mandatory;
+
+    scrollbar-width:none;
+
+    -ms-overflow-style:none;
+
+    padding-bottom:15px;
+
+}
+
+.division-slider::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+/*==========================================
 CARD
-=======================*/
+==========================================*/
 
 .division-card{
 
-    background:#fff;
+    position:relative;
+
+    flex:0 0 350px;
+
+    height:500px;
 
     border-radius:25px;
 
@@ -676,233 +696,179 @@ CARD
 
     text-decoration:none;
 
-    transition:.45s;
+    scroll-snap-align:center;
 
-    box-shadow:0 20px 45px rgba(0,0,0,.07);
+    transition:.4s;
 
-    position:relative;
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.18);
 
 }
 
 .division-card:hover{
 
-    transform:translateY(-12px);
+    transform:translateY(-10px);
 
-    box-shadow:0 35px 60px rgba(0,0,0,.12);
-
-}
-
-/*======================
-TOP BAR
-=======================*/
-
-.division-top{
-
-    height:10px;
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.25);
 
 }
 
-/*======================
-CONTENT
-=======================*/
+/*==========================================
+IMAGE
+==========================================*/
 
-.division-content{
+.division-card img:first-child{
 
-    padding:45px;
+    width:100%;
+    height:100%;
+    object-fit:cover;
 
-    text-align:center;
+    transition:.6s;
 
 }
 
-.division-content img{
+.division-card:hover img:first-child{
 
-    width:95px;
+    transform:scale(1.08);
 
-    height:95px;
+}
 
-    object-fit:contain;
+/*==========================================
+OVERLAY
+==========================================*/
 
-    margin-bottom:30px;
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+
+        to top,
+
+        rgba(0,0,0,.88),
+
+        rgba(0,0,0,.25),
+
+        rgba(0,0,0,.05)
+
+    );
+
+    padding:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+}
+
+/*==========================================
+LOGO
+==========================================*/
+
+.division-logo{
+
+    width:85px;
+
+    margin-bottom:20px;
+
+    filter:drop-shadow(0 10px 20px rgba(0,0,0,.35));
 
     transition:.4s;
 
 }
 
-.division-card:hover img{
+.division-card:hover .division-logo{
 
-    transform:scale(1.1);
+    transform:
 
-}
+    translateY(-8px)
 
-.division-content h3{
-
-    font-size:28px;
-
-    color:#1E293B;
-
-    margin-bottom:18px;
-
-    font-weight:700;
+    scale(1.08);
 
 }
 
-.division-content p{
+/*==========================================
+TEXT
+==========================================*/
 
-    color:#6B7280;
+.overlay h3{
 
-    line-height:1.8;
+    color:#fff;
 
-    margin-bottom:35px;
+    font-size:30px;
+
+    margin-bottom:15px;
+
+}
+
+.overlay p{
+
+    color:#f1f1f1;
 
     font-size:16px;
 
-}
+    line-height:1.8;
 
-.division-content span{
-
-    color:#009FE3;
-
-    font-weight:700;
-
-    transition:.3s;
+    margin-bottom:25px;
 
 }
 
-.division-card:hover span{
+/*==========================================
+BUTTON
+==========================================*/
 
-    letter-spacing:1px;
+.explore-btn{
 
-}
+    display:inline-flex;
 
-/*======================
-COLOUR THEMES
-=======================*/
+    align-items:center;
 
-.mining .division-top{
+    justify-content:center;
+
+    width:210px;
+
+    height:52px;
+
+    border-radius:50px;
 
     background:#009FE3;
 
-}
+    color:#fff;
 
-.infrastructure .division-top{
+    font-weight:700;
 
-    background:#8B5E3C;
-
-}
-
-.finance .division-top{
-
-    background:#7B2CBF;
+    transition:.35s;
 
 }
 
-.legal .division-top{
+.division-card:hover .explore-btn{
 
-    background:#111111;
+    background:#007dc0;
 
-}
-
-.media .division-top{
-
-    background:#F4C430;
+    transform:translateX(6px);
 
 }
 
-.services .division-top{
-
-    background:#FF8C42;
-
-}
-
-.agriculture .division-top{
-
-    background:#2E8B57;
-
-}
-
-.social .division-top{
-
-    background:#D62828;
-
-}
-
-/*======================
-HOVER GLOW
-=======================*/
-
-.mining:hover{
-
-    box-shadow:0 30px 60px rgba(0,159,227,.25);
-
-}
-
-.infrastructure:hover{
-
-    box-shadow:0 30px 60px rgba(139,94,60,.25);
-
-}
-
-.finance:hover{
-
-    box-shadow:0 30px 60px rgba(123,44,191,.25);
-
-}
-
-.legal:hover{
-
-    box-shadow:0 30px 60px rgba(0,0,0,.18);
-
-}
-
-.media:hover{
-
-    box-shadow:0 30px 60px rgba(244,196,48,.30);
-
-}
-
-.services:hover{
-
-    box-shadow:0 30px 60px rgba(255,140,66,.25);
-
-}
-
-.agriculture:hover{
-
-    box-shadow:0 30px 60px rgba(46,139,87,.25);
-
-}
-
-.social:hover{
-
-    box-shadow:0 30px 60px rgba(214,40,40,.25);
-
-}
-
-/*======================
-RESPONSIVE
-=======================*/
-
-@media(max-width:992px){
-
-.division-grid{
-
-grid-template-columns:1fr;
-
-}
-
-}
+/*==========================================
+PHONE
+==========================================*/
 
 @media(max-width:768px){
 
 .divisions{
 
-padding:90px 25px;
+padding:80px 20px;
 
 }
 
 .section-heading h2{
 
-font-size:36px;
+font-size:34px;
 
 }
 
@@ -912,15 +878,47 @@ font-size:16px;
 
 }
 
-.division-content{
+.division-slider{
 
-padding:35px;
+gap:18px;
 
 }
 
-.division-content h3{
+.division-card{
+
+flex:0 0 300px;
+
+height:430px;
+
+}
+
+.overlay{
+
+padding:22px;
+
+}
+
+.overlay h3{
 
 font-size:24px;
+
+}
+
+.overlay p{
+
+font-size:15px;
+
+}
+
+.division-logo{
+
+width:70px;
+
+}
+
+.explore-btn{
+
+width:100%;
 
 }
 
