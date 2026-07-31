@@ -10,16 +10,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!--==========================
-HEADER
-===========================-->
+<!--==================================================
+SECTION 01 - NAVIGATION
+===================================================-->
 
 <header class="header">
 
@@ -27,35 +27,39 @@ HEADER
 
         <!-- Logo -->
 
-        <div class="logo">
+        <a href="index.html" class="logo">
 
-            <a href="index.html">
+            <img src="images/logo.png" alt="JK Winners Investment Logo">
 
-                <img src="images/logo.png" alt="JK Winners Investment Logo">
+            <div class="logo-text">
 
-            </a>
+                <h2>JK Winners Investment</h2>
 
-            <h2>JK Winners Investment</h2>
+                <span>Assisting Companies</span>
 
-        </div>
+            </div>
+
+        </a>
 
         <!-- Navigation -->
 
-        <ul class="nav-menu">
+        <ul class="nav-links">
 
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
 
             <li class="dropdown">
 
-                <a href="#">About <i class="fas fa-chevron-down"></i></a>
+                <a href="#">About</a>
 
                 <ul class="dropdown-menu">
 
-                    <li><a href="about.html">Company Overview</a></li>
+                    <li><a href="#">Company Overview</a></li>
 
-                    <li><a href="leadership.html">Leadership</a></li>
+                    <li><a href="#">Chairman's Message</a></li>
 
-                    <li><a href="history.html">Our History</a></li>
+                    <li><a href="#">Vision & Mission</a></li>
+
+                    <li><a href="#">Our History</a></li>
 
                 </ul>
 
@@ -63,100 +67,130 @@ HEADER
 
             <li class="dropdown">
 
-                <a href="#">Divisions <i class="fas fa-chevron-down"></i></a>
+                <a href="#">Divisions</a>
 
                 <ul class="dropdown-menu">
 
-                    <li><a href="mining.html">Mining</a></li>
+                    <li><a href="#">Mining</a></li>
 
-                    <li><a href="infrastructure.html">Infrastructure</a></li>
+                    <li><a href="#">Infrastructure</a></li>
 
-                    <li><a href="finance.html">Finance</a></li>
+                    <li><a href="#">Finance</a></li>
 
-                    <li><a href="media.html">Media</a></li>
+                    <li><a href="#">Legal Services</a></li>
 
-                    <li><a href="farming.html">Farming</a></li>
+                    <li><a href="#">Media</a></li>
 
-                    <li><a href="legal.html">Legal</a></li>
+                    <li><a href="#">Professional Services</a></li>
 
-                    <li><a href="services.html">Professional Services</a></li>
+                    <li><a href="#">Agriculture</a></li>
 
-                    <li><a href="social.html">Social Development</a></li>
+                    <li><a href="#">Social Development</a></li>
 
                 </ul>
 
             </li>
 
-            <li><a href="projects.html">Projects</a></li>
+            <li class="dropdown">
 
-            <li><a href="investor.html">Investors</a></li>
+                <a href="#">Projects</a>
 
-            <li><a href="news.html">News</a></li>
+                <ul class="dropdown-menu">
 
-            <li><a href="careers.html">Careers</a></li>
+                    <li><a href="#">Current Projects</a></li>
 
-            <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Completed Projects</a></li>
+
+                    <li><a href="#">Partnerships</a></li>
+
+                </ul>
+
+            </li>
+
+            <li><a href="#">Investor Centre</a></li>
+
+            <li><a href="#">News</a></li>
+
+            <li><a href="#">Careers</a></li>
+
+            <li><a href="#">Contact</a></li>
 
         </ul>
 
         <!-- Right Side -->
 
-        <div class="nav-actions">
+        <div class="nav-right">
 
-            <a href="contact.html" class="contact-btn">
+            <button class="contact-btn">
 
                 Get in Touch
 
-            </a>
+            </button>
 
         </div>
-<div class="menu-toggle">
 
-    <i class="fas fa-bars"></i>
+        <!-- Mobile Menu -->
 
-</div>
+        <div class="menu-toggle">
+
+            <span></span>
+
+            <span></span>
+
+            <span></span>
+
+        </div>
+
     </nav>
 
 </header>
-<!--=================================
-HERO SECTION
-==================================-->
+<!--==================================================
+SECTION 02 - HERO
+===================================================-->
 
-<section class="hero">
+<section class="hero" id="home">
 
-    <div class="hero-overlay"></div>
+    <div class="hero-bg-shape shape-1"></div>
+    <div class="hero-bg-shape shape-2"></div>
+    <div class="hero-bg-shape shape-3"></div>
 
-    <div class="hero-content">
+    <div class="hero-container">
 
-        <img src="images/logo.png" alt="JK Winners Investment" class="hero-logo">
+        <div class="hero-logo">
 
-        <h4>WELCOME TO</h4>
+            <img src="images/logo.png" alt="JK Winners Investment Logo">
 
-        <h1>
-            JK Winners Investment
-        </h1>
+        </div>
 
-        <p>
+        <div class="hero-content">
 
-            Assisting industries, communities and investors through
-            Mining, Infrastructure, Finance, Professional Services and
-            Sustainable Development.
+            <span class="hero-subtitle">
+                STRATEGIC BUSINESS SOLUTIONS
+            </span>
 
-        </p>
+            <h1>
+                JK Winners Investment
+            </h1>
 
-        <div class="hero-buttons">
+            <p>
+                Assisting companies operating across strategic sectors that
+                drive South Africa's economy through expertise, innovation,
+                sustainable partnerships and long-term business growth.
+            </p>
 
-            <a href="about.html" class="btn-primary">
+            <div class="hero-divider"></div>
 
-                Discover More
+        </div>
 
-            </a>
+    </div>
 
-            <a href="contact.html" class="btn-secondary">
+    <div class="scroll-indicator">
 
-                Contact Us
+        <span>Scroll to Explore</span>
 
-            </a>
+        <div class="mouse">
+
+            <div class="wheel"></div>
 
         </div>
 
