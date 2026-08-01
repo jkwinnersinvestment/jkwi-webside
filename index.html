@@ -3,14 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">>
     <title>JK Winners Investment</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/home.css">
+   <link rel="stylesheet" href="css/global.css"> 
+<link rel="stylesheet" href="css/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -197,74 +198,56 @@ SECTION 02 - HERO
     </div>
 
 </section>
-<!--==========================
-LIVE MARKET TICKER
-===========================-->
+<!-- LIVE MARKET -->
 
 <section class="market-section">
 
-    <div class="market-header">
+    <div class="market-title">
 
-        <i class="fas fa-chart-line"></i>
-
-        <span>LIVE COMMODITY MARKET</span>
+        <span>LIVE MARKET DATA</span>
 
     </div>
 
-    <div class="ticker">
+    <div class="market-ticker">
 
         <div class="ticker-track">
 
-            <div class="ticker-item">
-                 <strong>Gold</strong>
-                <span id="gold">$--</span>
+            <div class="market-item">
+                🥇 Gold
+                <span id="gold-price">$2,350</span>
+                <small class="up">▲ 1.2%</small>
             </div>
 
-            <div class="ticker-item">
-                 <strong>Silver</strong>
-                <span id="silver">$--</span>
+            <div class="market-item">
+                🥈 Silver
+                <span id="silver-price">$31.20</span>
+                <small class="down">▼ 0.3%</small>
             </div>
 
-            <div class="ticker-item">
-                <strong>Platinum</strong>
-                <span id="platinum">$--</span>
+            <div class="market-item">
+                🪙 Platinum
+                <span id="platinum-price">$980</span>
+                <small class="up">▲ 0.8%</small>
             </div>
 
-            <div class="ticker-item">
-                 <strong>Palladium</strong>
-                <span id="palladium">$--</span>
+            <div class="market-item">
+                ₿ Bitcoin
+                <span id="btc-price">$118,000</span>
+                <small class="up">▲ 2.1%</small>
             </div>
 
-            <div class="ticker-item">
-                 <strong>Oil</strong>
-                <span id="oil">$--</span>
+            <!-- Duplicate items for smooth scrolling -->
+
+            <div class="market-item">
+                🥇 Gold
+                <span>$2,350</span>
+                <small class="up">▲ 1.2%</small>
             </div>
 
-            <!-- Duplicate for seamless scrolling -->
-
-            <div class="ticker-item">
-                 <strong>Gold</strong>
-                <span id="gold2">$--</span>
-            </div>
-
-            <div class="ticker-item">
-                 <strong>Silver</strong>
-                <span id="silver2">$--</span>
-            </div>
-
-            <div class="ticker-item">
-                 <strong>Platinum</strong>
-                <span id="platinum2">$--</span>
-            </div>
-
-            <div class="ticker-item">
-                 <strong>Palladium</strong>
-                <span id="palladium2">$--</span>
-            </div>
-
-            <div class="ticker-item">
-                 <strong>Oil</strong>
-                <span id="oil2">$--</span>
+            <div class="market-item">
+                🥈 Silver
+                <span>$31.20</span>
+                <small class="down">▼ 0.3%</small>
             </div>
 
         </div>
@@ -272,9 +255,9 @@ LIVE MARKET TICKER
     </div>
 
 </section>
-<!--=========================================
-OUR DIVISIONS
-==========================================-->
+<!-- =========================================
+EXPLORE OUR BUSINESS DIVISIONS
+========================================== -->
 
 <section class="divisions">
 
@@ -285,99 +268,67 @@ OUR DIVISIONS
         <h2>Explore Our Business Divisions</h2>
 
         <p>
-            Discover the diverse sectors driving JK Winners Investment's sustainable growth.
+            Discover the industries powering JK Winners Investment.
         </p>
 
     </div>
 
     <div class="division-slider">
 
-        <!-- Mining -->
-        <a href="mining.html" class="division-card">
-            <img src="images/mining-card.jpeg" alt="Mining Division">
-            <div class="overlay">
-                <img src="images/divisions/mining.png" class="division-logo" alt="">
-                <h3>Mining Division</h3>
-                <p>Responsible mineral exploration and sustainable mining operations.</p>
-                <div class="explore-btn">Explore Division →</div>
-            </div>
+        <a href="mining.html" class="division">
+            <img src="images/mining.png" alt="JK Winners Investment Logo">
+            <h3>Mining</h3>
+            <p>Responsible mineral exploration and sustainable mining operations.</p>
+            <span>Explore Division →</span>
         </a>
 
-        <!-- Farming -->
-        <a href="agriculture.html" class="division-card">
-            <img src="images/farming-card.jpeg" alt="Farming Division">
-            <div class="overlay">
-                <img src="images/divisions/farming.png" class="division-logo" alt="">
-                <h3>Farming Division</h3>
-                <p>Modern agriculture and food production for a sustainable future.</p>
-                <div class="explore-btn">Explore Division →</div>
-            </div>
+        <a href="farming.html" class="division">
+            <img src="images/farming.png" alt="JK Winners Investment Logo">
+            <h3>Farming</h3>
+            <p>Modern agriculture, livestock and sustainable food production.</p>
+            <span>Explore Division →</span>
         </a>
 
-        <!-- Infrastructure -->
-        <a href="infrastructure.html" class="division-card">
-            <img src="images/infrastructure-card.jpeg" alt="Infrastructure Division">
-            <div class="overlay">
-                <img src="images/divisions/infrastructure.png" class="division-logo" alt="">
-                <h3>Infrastructure Division</h3>
-                <p>Building roads, bridges and infrastructure that connect communities.</p>
-                <div class="explore-btn">Explore Division →</div>
-            </div>
+        <a href="infrastructure.html" class="division">
+            <img src="images/infrastructure.png" alt="JK Winners Investment Logo">
+            <h3>Infrastructure</h3>
+            <p>Building roads, bridges and world-class infrastructure.</p>
+            <span>Explore Division →</span>
         </a>
 
-        <!-- Finance -->
-        <a href="finance.html" class="division-card">
-            <img src="images/finance-card.jpeg" alt="Finance Division">
-            <div class="overlay">
-                <img src="images/divisions/finance.png" class="division-logo" alt="">
-                <h3>Finance Division</h3>
-                <p>Investment, financial planning and strategic business solutions.</p>
-                <div class="explore-btn">Explore Division →</div>
-            </div>
+        <a href="finance.html" class="division">
+            <img src="images/finance.png" alt="JK Winners Investment Logo">
+            <h3>Finance</h3>
+            <p>Strategic investments and innovative financial solutions.</p>
+            <span>Explore Division →</span>
         </a>
 
-        <!-- Media -->
-        <a href="media.html" class="division-card">
-            <img src="images/media-card.jpeg" alt="Media Division">
-            <div class="overlay">
-                <img src="images/divisions/media.png" class="division-logo" alt="">
-                <h3>Media Division</h3>
-                <p>Creative media, communications and digital marketing services.</p>
-                <div class="explore-btn">Explore Division →</div>
-            </div>
+        <a href="media.html" class="division">
+            <img src="images/media.png" alt="JK Winners Investment Logo">
+            <h3>Media</h3>
+            <p>Creative media, branding and digital communication services.</p>
+            <span>Explore Division →</span>
         </a>
 
-        <!-- Legal -->
-        <a href="legal.html" class="division-card">
-            <img src="images/legal-card.jpeg" alt="Legal Division">
-            <div class="overlay">
-                <img src="images/divisions/legal.png" class="division-logo" alt="">
-                <h3>Legal Division</h3>
-                <p>Professional legal advisory and corporate compliance solutions.</p>
-                <div class="explore-btn">Explore Division →</div>
-            </div>
+        <a href="legal.html" class="division">
+            <img src="images/legal.png" alt="JK Winners Investment Logo">
+            <h3>Legal</h3>
+            <p>Corporate legal advisory and regulatory compliance.</p>
+            <span>Explore Division →</span>
         </a>
 
-        <!-- Professional Services -->
-        <a href="services.html" class="division-card">
-            <img src="images/services-card.jpeg" alt="Professional Services">
-            <div class="overlay">
-                <img src="images/divisions/professional.png" class="division-logo" alt="">
-                <h3>Professional Services</h3>
-                <p>Business consulting and professional support across multiple industries.</p>
-                <div class="explore-btn">Explore Division →</div>
-            </div>
+        <a href="services.html" class="division">
+            <img src="images/professional Services.png" alt="JK Winners Investment Logo">
+            <h3>Professional Services</h3>
+            <p>Expert consulting and business support across industries.</p>
+            <span>Explore Division →</span>
         </a>
 
-        <!-- Social Development -->
-        <a href="social.html" class="division-card">
-            <img src="images/social-card.jpeg" alt="Social Development">
-            <div class="overlay">
-                <img src="images/divisions/social.png" class="division-logo" alt="">
-                <h3>Social Development</h3>
-                <p>Creating lasting impact through education, empowerment and community development.</p>
-                <div class="explore-btn">Explore Division →</div>
-            </div>
+        <a href="social.html" class="division">
+            <img src="images/social.png" alt="JK Winners Investment Logo">
+            <h3>Social Development</h3>
+            <p>Empowering communities through sustainable development.</p>
+            <span>Explore Division →</span>
         </a>
 
     </div>
