@@ -692,21 +692,23 @@ SECTION 02 - HERO
 @media (max-width:768px){
 
 .hero h1{
-    font-size: 44px;
+
+    font-size:56px;
+    line-height:1.05;
+
 }
 
 .hero p{
-    font-size: 17px;
+
+    font-size:18px;
+
 }
 
-.hero-logo img{
-    width: 160px;
-}
+.hero-logo{
 
-.hero-subtitle{
-    font-size: 13px;
-}
+    width:170px;
 
+}
 }
 /*==================================================
 SECTION 02 - HERO ANIMATIONS
@@ -1062,8 +1064,9 @@ DIVISIONS
 
 .divisions{
 
-    padding:100px 8%;
-
+    width:min(1400px,100%);
+margin:auto;
+padding:100px 25px;
     background:#ffffff;
 
 }
@@ -2372,4 +2375,82 @@ NEWS SUMMARY
     color:#009FE3;
     text-decoration:none;
     font-weight:600;
+}/*=========================================
+LIVE MARKET - MOBILE
+=========================================*/
+
+@media (max-width:768px){
+
+.market-section{
+
+    padding:20px 0;
+
+}
+
+.market-title{
+
+    margin-bottom:15px;
+
+}
+
+.market-title span{
+
+    font-size:18px;
+
+    letter-spacing:1px;
+
+}
+
+.market-ticker{
+
+    width:100%;
+
+    overflow:hidden;
+
+}
+
+.ticker-track{
+
+    gap:20px;
+
+    animation:scrollTicker 20s linear infinite;
+
+}
+
+.market-item{
+
+    min-width:180px;
+
+    padding:12px 18px;
+
+    border-radius:50px;
+
+    background:#ffffff;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+    font-size:15px;
+
+}
+
+.market-item span{
+
+    font-size:16px;
+
+    font-weight:700;
+
+}
+
+.up{
+
+    color:#00B050;
+
+}
+
+.down{
+
+    color:#E53935;
+
+}
+
 }
