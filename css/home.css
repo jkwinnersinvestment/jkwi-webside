@@ -1056,495 +1056,219 @@ width:260px;
 }
 
 }
-/*======================================
-DIVISIONS
-======================================*/
-
-.divisions{
-
-    width:min(1400px,100%);
-margin:auto;
-padding:100px 25px;
-    background:#ffffff;
-
+.divisions {
+    width: 100%;
+    padding: 90px 0;
+    background: #fff;
+    overflow: hidden;
 }
 
-.section-heading{
-
-    text-align:center;
-
-    margin-bottom:60px;
-
+.section-title {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
 }
 
-.section-heading span{
-
-    color:#009FE3;
-
-    font-size:14px;
-
-    font-weight:700;
-
-    letter-spacing:2px;
-
-    text-transform:uppercase;
-
+.section-title span {
+    color: #009FE3;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
 }
 
-.section-heading h2{
-
-    font-size:48px;
-
-    color:#111;
-
-    margin:15px 0;
-
+.section-title h2 {
+    color: #111;
+    font-size: 46px;
+    margin: 15px 0;
 }
 
-.section-heading p{
-
-    max-width:650px;
-
-    margin:auto;
-
-    color:#666;
-
-    font-size:18px;
-
-    line-height:1.8;
-
+.section-title p {
+    color: #666;
+    font-size: 17px;
+    line-height: 1.7;
 }
 
-/*===============================*/
-
-.division-slider{
-
-    display:flex;
-
-    gap:30px;
-
-    overflow-x:auto;
-
-    scroll-snap-type:x mandatory;
-
-    scrollbar-width:none;
-
-    -ms-overflow-style:none;
-
-    padding-bottom:15px;
-
+.division-slider {
+    display: flex;
+    gap: 70px;
+    width: max-content;
+    padding: 10px 50px 25px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
 }
 
-.division-slider::-webkit-scrollbar{
-
-    display:none;
-
+.division-slider::-webkit-scrollbar {
+    display: none;
 }
 
-/*===============================*/
-
-.division{
-
-    flex:0 0 280px;
-
-    scroll-snap-align:center;
-
-    text-decoration:none;
-
-    text-align:center;
-
-    padding:35px 25px;
-
-    border-radius:20px;
-
-    transition:.35s;
-
+.division {
+    width: 220px;
+    flex: 0 0 220px;
+    text-align: center;
+    scroll-snap-align: center;
 }
 
-.division:hover{
-
-    transform:translateY(-8px);
-
+.division img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin: 0 auto 20px;
+    transition: transform .3s ease;
 }
 
-.division img{
-
-    width:90px;
-
-    margin-bottom:20px;
-
-    transition:.35s;
-
-    filter:drop-shadow(0 10px 15px rgba(0,0,0,.15));
-
+.division:hover img {
+    transform: translateY(-7px);
 }
 
-.division:hover img{
-
-    transform:translateY(-8px) scale(1.08);
-
+.division h3 {
+    color: #111;
+    font-size: 22px;
+    margin-bottom: 12px;
 }
 
-.division h3{
-
-    color:#111;
-
-    font-size:24px;
-
-    margin-bottom:15px;
-
+.division p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 18px;
 }
 
-.division p{
-
-    color:#666;
-
-    font-size:16px;
-
-    line-height:1.7;
-
-    margin-bottom:20px;
-
+.division a {
+    color: #009FE3;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
 }
 
-.division span{
-
-    color:#009FE3;
-
-    font-weight:700;
-
-    transition:.3s;
-
+.division a:hover {
+    text-decoration: underline;
 }
 
-.division:hover span{
+/* PHONE */
 
-    letter-spacing:.5px;
+@media (max-width: 768px) {
 
-}
+    .divisions {
+        padding: 70px 0;
+    }
 
-/*======================================
-PHONE
-======================================*/
+    .section-title {
+        margin-bottom: 45px;
+    }
 
-@media(max-width:768px){
+    .section-title h2 {
+        font-size: 32px;
+        line-height: 1.2;
+    }
 
-.divisions{
+    .section-title p {
+        font-size: 15px;
+    }
 
-padding:80px 20px;
+    .division-slider {
+        gap: 45px;
+        padding: 10px 25px 25px;
+        scroll-padding-left: 25px;
+    }
 
-}
+    .division {
+        width: 190px;
+        flex: 0 0 190px;
+    }
 
-.section-heading h2{
+    .division img {
+        width: 65px;
+        height: 65px;
+    }
 
-font-size:34px;
+    .division h3 {
+        font-size: 20px;
+    }
 
-}
-
-.section-heading p{
-
-font-size:16px;
-
-}
-
-.division{
-
-flex:0 0 250px;
-
-padding:25px;
-
-}
-
-.division img{
-
-width:75px;
-
-}
-
-.division h3{
-
-font-size:22px;
+    .division p {
+        font-size: 14px;
+    }
 
 }
+/* MINING VIDEO */
 
-.division p{
-
-font-size:15px;
-
+.mining-video-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 80px auto 0;
+    padding: 0 25px;
+    text-align: center;
 }
 
-}
-/*==========================================
-SLIDER
-==========================================*/
-
-.division-slider{
-
-    display:flex;
-    gap:25px;
-
-    overflow-x:auto;
-
-    scroll-snap-type:x mandatory;
-
-    scrollbar-width:none;
-
-    -ms-overflow-style:none;
-
-    padding-bottom:15px;
-
+.video-heading span {
+    color: #009FE3;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
 }
 
-.division-slider::-webkit-scrollbar{
-
-    display:none;
-
+.video-heading h2 {
+    font-size: 42px;
+    color: #111;
+    margin: 12px 0;
 }
 
-/*==========================================
-CARD
-==========================================*/
-
-.division-card{
-
-    position:relative;
-
-    flex:0 0 350px;
-
-    height:500px;
-
-    border-radius:25px;
-
-    overflow:hidden;
-
-    text-decoration:none;
-
-    scroll-snap-align:center;
-
-    transition:.4s;
-
-    box-shadow:
-    0 15px 35px rgba(0,0,0,.18);
-
+.video-heading p {
+    color: #666;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 35px;
 }
 
-.division-card:hover{
-
-    transform:translateY(-10px);
-
-    box-shadow:
-    0 25px 60px rgba(0,0,0,.25);
-
+.youtube-video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.12);
 }
 
-/*==========================================
-IMAGE
-==========================================*/
-
-.division-card img:first-child{
-
-    width:100%;
-    height:100%;
-    object-fit:cover;
-
-    transition:.6s;
-
+.youtube-video iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
-.division-card:hover img:first-child{
+@media (max-width: 768px) {
 
-    transform:scale(1.08);
+    .mining-video-section {
+        margin-top: 60px;
+        padding: 0 20px;
+    }
 
-}
+    .video-heading h2 {
+        font-size: 30px;
+    }
 
-/*==========================================
-OVERLAY
-==========================================*/
+    .video-heading p {
+        font-size: 15px;
+    }
 
-.overlay{
-
-    position:absolute;
-
-    inset:0;
-
-    background:linear-gradient(
-
-        to top,
-
-        rgba(0,0,0,.88),
-
-        rgba(0,0,0,.25),
-
-        rgba(0,0,0,.05)
-
-    );
-
-    padding:30px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:flex-end;
+    .youtube-video {
+        border-radius: 12px;
+    }
 
 }
-
-/*==========================================
-LOGO
-==========================================*/
-
-.division-logo{
-
-    width:85px;
-
-    margin-bottom:20px;
-
-    filter:drop-shadow(0 10px 20px rgba(0,0,0,.35));
-
-    transition:.4s;
-
+.mining-video {
+    width: 100%;
+    max-width: 1100px;
+    aspect-ratio: 16 / 9;
+    margin: 70px auto 0;
+    overflow: hidden;
+    border-radius: 16px;
 }
 
-.division-card:hover .division-logo{
-
-    transform:
-
-    translateY(-8px)
-
-    scale(1.08);
-
-}
-
-/*==========================================
-TEXT
-==========================================*/
-
-.overlay h3{
-
-    color:#fff;
-
-    font-size:30px;
-
-    margin-bottom:15px;
-
-}
-
-.overlay p{
-
-    color:#f1f1f1;
-
-    font-size:16px;
-
-    line-height:1.8;
-
-    margin-bottom:25px;
-
-}
-
-/*==========================================
-BUTTON
-==========================================*/
-
-.explore-btn{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    width:210px;
-
-    height:52px;
-
-    border-radius:50px;
-
-    background:#009FE3;
-
-    color:#fff;
-
-    font-weight:700;
-
-    transition:.35s;
-
-}
-
-.division-card:hover .explore-btn{
-
-    background:#007dc0;
-
-    transform:translateX(6px);
-
-}
-
-/*==========================================
-PHONE
-==========================================*/
-
-@media(max-width:768px){
-
-.divisions{
-
-padding:80px 20px;
-
-}
-
-.section-heading h2{
-
-font-size:34px;
-
-}
-
-.section-heading p{
-
-font-size:16px;
-
-}
-
-.division-slider{
-
-gap:18px;
-
-}
-
-.division-card{
-
-flex:0 0 300px;
-
-height:430px;
-
-}
-
-.overlay{
-
-padding:22px;
-
-}
-
-.overlay h3{
-
-font-size:24px;
-
-}
-
-.overlay p{
-
-font-size:15px;
-
-}
-
-.division-logo{
-
-width:70px;
-
-}
-
-.explore-btn{
-
-width:100%;
-
-}
-
+.mining-video iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 /*==================================================
 SECTION 04 - ABOUT
