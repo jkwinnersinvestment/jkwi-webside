@@ -138,42 +138,7 @@ SECTION 01 - NAVIGATION
 
 <!-- MOBILE MENU -->
 
-<div class="mobile-menu" id="mobileMenu">
 
-    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
-        ×
-    </button>
-
-    <div class="mobile-menu-logo">
-        <img src="images/logo/jkwi-logo.png" alt="JK Winners Investment">
-        <h3>JK Winners Investment</h3>
-    </div>
-
-    <nav>
-
-        <a href="index.html">Home</a>
-
-        <a href="about.html">About</a>
-
-        <a href="#divisions">Divisions</a>
-
-        <a href="projects.html">Projects</a>
-
-        <a href="investor.html">Investor Centre</a>
-
-        <a href="news.html">News</a>
-
-        <a href="careers.html">Careers</a>
-
-        <a href="contact.html">Contact</a>
-
-    </nav>
-
-    <a href="contact.html" class="mobile-contact-btn">
-        Get in Touch
-    </a>
-
-</div>
 </header>
 <!--==================================================
 SECTION 02 - HERO
@@ -228,63 +193,7 @@ SECTION 02 - HERO
     </div>
 
 </section>
-<!-- LIVE MARKET -->
 
-<section class="market-section">
-
-    <div class="market-title">
-
-        <span>LIVE MARKET DATA</span>
-
-    </div>
-
-    <div class="market-ticker">
-
-        <div class="ticker-track">
-
-            <div class="market-item">
-                🥇 Gold
-                <span id="gold-price">$2,350</span>
-                <small class="up">▲ 1.2%</small>
-            </div>
-
-            <div class="market-item">
-                🥈 Silver
-                <span id="silver-price">$31.20</span>
-                <small class="down">▼ 0.3%</small>
-            </div>
-
-            <div class="market-item">
-                🪙 Platinum
-                <span id="platinum-price">$980</span>
-                <small class="up">▲ 0.8%</small>
-            </div>
-
-            <div class="market-item">
-                ₿ Bitcoin
-                <span id="btc-price">$118,000</span>
-                <small class="up">▲ 2.1%</small>
-            </div>
-
-            <!-- Duplicate items for smooth scrolling -->
-
-            <div class="market-item">
-                🥇 Gold
-                <span>$2,350</span>
-                <small class="up">▲ 1.2%</small>
-            </div>
-
-            <div class="market-item">
-                🥈 Silver
-                <span>$31.20</span>
-                <small class="down">▼ 0.3%</small>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
 <section class="divisions" id="divisions">
 
     <div class="section-title">
@@ -354,80 +263,206 @@ SECTION 02 - HERO
     </div>
 
 </section>
-<!-- MINING VIDEO -->
 
-<div class="mining-video-section">
+<section>
 
     <div class="video-heading">
-        <span>MINING</span>
-        <h2>Powering Africa's Resources</h2>
-        <p>
-            Discover the technology, people and operations
-            shaping the future of mining.
-        </p>
+        <span>JKWI</span>
+        <h2></h2>
     </div>
 
-    <div class="mining-video">
+    <div class="jkwi-video">
+        <video
+    src="videos/intro.mp4"
+    autoplay
+    muted
+    loop
+    playsinline>
+</video>
+    </div>
 
-    <iframe
-        src="https://www.youtube.com/embed/9dqd23S6U2w"
-        title="Mining Operations"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-    </iframe>
-
-S
-
-</div>
+</section>
 <!-- ==========================
 NEWS SUMMARY
 ========================== -->
+<section class="jkwi-news" id="news">
 
-<section class="news-summary">
+    <div class="news-heading">
+        <span>JKWI NEWS</span>
+        <h2>MUST READ</h2>
+    </div>
 
-    <div class="container">
 
-        <div class="section-title">
-            <h2>Latest News & Updates</h2>
+    <!-- LOCAL BUSINESS -->
+
+    <article class="news-item">
+
+        <img src="images/news/local-business.jpg"
+             alt="Local Business">
+
+        <div class="news-info">
+
+            <div class="news-meta">
+                <span>LOCAL BUSINESS</span>
+                <small>Today</small>
+            </div>
+
+            <h3>South African Business</h3>
+
             <p>
-                Stay informed with the latest company announcements,
-                business developments and future initiatives.
+                The latest developments, opportunities and stories
+                shaping businesses across South Africa.
             </p>
+
+            <a href="local-business.html">
+                Read More →
+            </a>
+
         </div>
 
-        <div class="news-grid">
+    </article>
 
-            <div class="news-card">
-                <span class="news-date">July 2026</span>
-                <h3>JK Winners Investment Launches Corporate Website</h3>
-                <p>
-                    Our new corporate website provides investors, partners and
-                    the public with improved access to company information,
-                    business divisions and future developments.
-                </p>
-                <a href="news.html">Read More →</a>
+
+    <!-- INTERNATIONAL BUSINESS -->
+
+    <article class="news-item">
+
+        <img src="images/news/international-business.jpg"
+             alt="International Business">
+
+        <div class="news-info">
+
+            <div class="news-meta">
+                <span>INTERNATIONAL BUSINESS</span>
+                <small>1d</small>
             </div>
 
-            <div class="news-card">
-                <span class="news-date">July 2026</span>
-                <h3>Business Expansion Strategy</h3>
-                <p>
-                    JK Winners Investment continues to strengthen its vision
-                    across mining, infrastructure, finance and professional
-                    services for long-term sustainable growth.
-                </p>
-                <a href="news.html">Read More →</a>
+            <h3>Global Economy</h3>
+
+            <p>
+                Important international business developments,
+                companies and economic movements from around the world.
+            </p>
+
+            <a href="international-business.html">
+                Read More →
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <!-- MARKET -->
+
+    <article class="news-item">
+
+        <img src="images/news/market.jpg"
+             alt="Global Market">
+
+        <div class="news-info">
+
+            <div class="news-meta">
+                <span>MARKET</span>
+                <small>1d</small>
             </div>
 
-            <div class="news-card">
-                <span class="news-date">Coming Soon</span>
-                <h3>Future Project Announcements</h3>
-                <p>
-                    Additional company announcements, investment opportunities
-                    and project updates will be published as they become available.
-                </p>
-                <a href="news.html">Read More →</a>
+            <h3>Global Markets</h3>
+
+            <p>
+                Follow major movements across commodities,
+                currencies, equities and financial markets.
+            </p>
+
+            <a href="markets.html">
+                Read More →
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <!-- LOCAL MARKET -->
+
+    <article class="news-item">
+
+        <img src="images/news/local-market.jpg"
+             alt="Local Market">
+
+        <div class="news-info">
+
+            <div class="news-meta">
+                <span>LOCAL MARKET</span>
+                <small>2d</small>
+            </div>
+
+            <h3>JSE Market</h3>
+
+            <p>
+                South African market movements, commodities,
+                shares and important economic indicators.
+            </p>
+
+            <a href="local-markets.html">
+                Read More →
+            </a>
+
+        </div>
+
+    </article>
+
+</section>
+<!-- LIVE MARKET -->
+
+<section class="market-section">
+
+    <div class="market-title">
+
+        <span>LIVE MARKET DATA</span>
+
+    </div>
+
+    <div class="market-ticker">
+
+        <div class="ticker-track">
+
+            <div class="market-item">
+                🥇 Gold
+                <span id="gold-price">$2,350</span>
+                <small class="up">▲ 1.2%</small>
+            </div>
+
+            <div class="market-item">
+                🥈 Silver
+                <span id="silver-price">$31.20</span>
+                <small class="down">▼ 0.3%</small>
+            </div>
+
+            <div class="market-item">
+                🪙 Platinum
+                <span id="platinum-price">$980</span>
+                <small class="up">▲ 0.8%</small>
+            </div>
+
+            <div class="market-item">
+                ₿ Bitcoin
+                <span id="btc-price">$118,000</span>
+                <small class="up">▲ 2.1%</small>
+            </div>
+
+            <!-- Duplicate items for smooth scrolling -->
+
+            <div class="market-item">
+                🥇 Gold
+                <span>$2,350</span>
+                <small class="up">▲ 1.2%</small>
+            </div>
+
+            <div class="market-item">
+                🥈 Silver
+                <span>$31.20</span>
+                <small class="down">▼ 0.3%</small>
             </div>
 
         </div>
@@ -515,208 +550,7 @@ SECTION 04 - ABOUT JK WINNERS INVESTMENT
     </div>
 
 </section>
-<!--==================================================
-SECTION 05 - JKWI ECOSYSTEM
-===================================================-->
 
-<section class="ecosystem" id="ecosystem">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span class="section-subtitle">
-                THE JKWI ECOSYSTEM
-            </span>
-
-            <h2>
-                Connecting Strategic Industries
-            </h2>
-
-            <p>
-                JK Winners Investment assists companies by creating strong
-                connections across strategic industries, encouraging
-                collaboration, innovation and sustainable economic growth.
-            </p>
-
-        </div>
-
-        <div class="ecosystem-grid">
-
-            <div class="ecosystem-card">
-
-                <img src="images/mining.png" alt="Mining">
-
-                <h3>Mining</h3>
-
-            </div>
-
-            <div class="ecosystem-card">
-
-                <img src="images/infrastructure.png" alt="Infrastructure">
-
-                <h3>Infrastructure</h3>
-
-            </div>
-
-            <div class="ecosystem-card">
-
-                <img src="images/finance.png" alt="Finance">
-
-                <h3>Finance</h3>
-
-            </div>
-
-            <div class="ecosystem-card">
-
-                <img src="images/legal.png" alt="Legal">
-
-                <h3>Legal</h3>
-
-            </div>
-
-            <div class="ecosystem-card center-logo">
-
-                <img src="images/logo.png" alt="JK Winners Investment">
-
-                <h3>JK Winners Investment</h3>
-
-            </div>
-
-            <div class="ecosystem-card">
-
-                <img src="images/media.png" alt="Media">
-
-                <h3>Media</h3>
-
-            </div>
-
-            <div class="ecosystem-card">
-
-                <img src="images/professional Services.png" alt="Professional Services">
-
-                <h3>Professional Services</h3>
-
-            </div>
-
-            <div class="ecosystem-card">
-
-                <img src="images/farming.png" alt="Agriculture">
-
-                <h3>Agriculture</h3>
-
-            </div>
-
-            <div class="ecosystem-card">
-
-                <img src="images/social.png" alt="Social Development">
-
-                <h3>Social Development</h3>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-<section class="chairman" id="chairman">
-
-<div class="container">
-
-<div class="chairman-grid">
-
-<div class="chairman-image">
-
-<img src="images/chairperson.jpeg" alt="Jacob Kori Mokwebo">
-
-</div>
-
-<div class="chairman-content">
-
-<span class="section-subtitle">
-CHAIRMAN'S MESSAGE
-</span>
-
-<h2>
-Leading with Vision, Integrity and Purpose
-</h2>
-
-<p>
-Welcome to JK Winners Investment. Our mission is to assist businesses across strategic industries by building trusted partnerships, delivering professional solutions and contributing to sustainable economic growth.
-</p>
-
-<p>
-Every opportunity we pursue is guided by integrity, innovation and a commitment to excellence. Together, we are building a stronger future for businesses and communities across South Africa.
-</p>
-
-<div class="chairman-sign">
-
-<h3>Jacob Kori Mokwebo</h3>
-
-<span>Founder & Chairman</span>
-
-</div>
-
-<a href="about.html" class="about-btn">
-Read Full Message →
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-<!-- ===========================
-WHY CHOOSE JK WINNERS
-=========================== -->
-
-<section class="why-us">
-
-    <div class="container">
-
-        <div class="section-title">
-            <h2>Why Choose JK Winners Investment</h2>
-            <p>
-                We are committed to delivering sustainable growth, innovation,
-                and value across South Africa's mining, infrastructure, finance,
-                and professional services sectors.
-            </p>
-        </div>
-
-        <div class="why-grid">
-
-            <div class="why-card">
-                <i class="fas fa-gem"></i>
-                <h3>Quality & Excellence</h3>
-                <p>We strive for excellence in every project we undertake.</p>
-            </div>
-
-            <div class="why-card">
-                <i class="fas fa-handshake"></i>
-                <h3>Integrity</h3>
-                <p>Building trusted partnerships through honesty and accountability.</p>
-            </div>
-
-            <div class="why-card">
-                <i class="fas fa-leaf"></i>
-                <h3>Sustainability</h3>
-                <p>Creating long-term value while protecting communities and the environment.</p>
-            </div>
-
-            <div class="why-card">
-                <i class="fas fa-chart-line"></i>
-                <h3>Growth</h3>
-                <p>Focused on innovation and expanding opportunities for the future.</p>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
 <!-- ==========================
 CONTACT SECTION
 ========================== -->
