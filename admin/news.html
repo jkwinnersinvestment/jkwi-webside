@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>JKWI News Manager</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/news-admin.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="admin-sidebar">
+
+        <div class="admin-logo">
+
+            <img
+                src="../images/jkwi-logo.png"
+                alt="JK Winners Investment"
+            >
+
+            <div>
+
+                <strong>
+                    JK Winners
+                </strong>
+
+                <small>
+                    Investment
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a
+                href="news.html"
+                class="active"
+            >
+                News
+            </a>
+
+            <a href="projects.html">
+                Projects
+            </a>
+
+            <a href="investors.html">
+                Investors
+            </a>
+
+            <a href="documents.html">
+                Documents
+            </a>
+
+            <a href="settings.html">
+                Settings
+            </a>
+
+        </nav>
+
+
+        <a
+            href="../index.html"
+            class="view-site"
+        >
+            View Website →
+        </a>
+
+    </aside>
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="admin-main">
+
+
+        <!-- =========================================
+             HEADER
+        ========================================== -->
+
+        <header class="admin-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    CONTENT MANAGEMENT
+                </span>
+
+                <h1>
+                    News Manager
+                </h1>
+
+                <p>
+                    Create and manage JKWI business news.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="new-news-btn"
+                id="openNewsEditor"
+            >
+                + New News
+            </button>
+
+        </header>
+
+
+
+        <!-- =========================================
+             STATISTICS
+        ========================================== -->
+
+        <section class="news-stats">
+
+
+            <div class="stat">
+
+                <span>
+                    Published
+                </span>
+
+                <strong id="publishedCount">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="stat">
+
+                <span>
+                    Drafts
+                </span>
+
+                <strong id="draftCount">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="stat">
+
+                <span>
+                    Total News
+                </span>
+
+                <strong id="totalCount">
+                    0
+                </strong>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             NEWS EDITOR
+        ========================================== -->
+
+        <section
+            class="news-editor"
+            id="newsEditor"
+        >
+
+
+            <div class="editor-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        ARTICLE EDITOR
+                    </span>
+
+                    <h2>
+                        Create News
+                    </h2>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="close-editor"
+                    id="closeNewsEditor"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 NEWS FORM
+            ====================================== -->
+
+            <form id="newsForm">
+
+
+                <!-- HEADLINE -->
+
+                <div class="form-group">
+
+                    <label for="title">
+                        Headline
+                    </label>
+
+                    <input
+                        type="text"
+                        id="title"
+                        name="title"
+                        placeholder="Enter news headline"
+                        maxlength="255"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- CATEGORY + DATE -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="category">
+                            Category
+                        </label>
+
+                        <select
+                            id="category"
+                            name="category"
+                            required
+                        >
+
+                            <option value="">
+                                Select category
+                            </option>
+
+                            <option value="Local Business">
+                                Local Business
+                            </option>
+
+                            <option value="International Business">
+                                International Business
+                            </option>
+
+                            <option value="Market">
+                                Market
+                            </option>
+
+                            <option value="Local Market">
+                                Local Market
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="publishedAt">
+                            Publication Date
+                        </label>
+
+                        <input
+                            type="datetime-local"
+                            id="publishedAt"
+                            name="published_at"
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- SUMMARY -->
+
+                <div class="form-group">
+
+                    <label for="summary">
+                        Short Summary
+                    </label>
+
+                    <textarea
+                        id="summary"
+                        name="summary"
+                        rows="4"
+                        maxlength="500"
+                        placeholder="Write a short summary for the homepage..."
+                        required
+                    ></textarea>
+
+                    <small>
+                        Keep this short and informative.
+                    </small>
+
+                </div>
+
+
+
+                <!-- FULL ARTICLE -->
+
+                <div class="form-group">
+
+                    <label for="content">
+                        Full Article
+                    </label>
+
+                    <textarea
+                        id="content"
+                        name="content"
+                        rows="14"
+                        placeholder="Write the full news article here..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+
+                <!-- IMAGE -->
+
+                <div class="form-group">
+
+                    <label for="image">
+                        News Image
+                    </label>
+
+
+                    <div class="image-upload">
+
+                        <input
+                            type="file"
+                            id="image"
+                            name="image"
+                            accept="image/jpeg,image/png,image/webp"
+                        >
+
+
+                        <div class="upload-text">
+
+                            <strong>
+                                Choose cover image
+                            </strong>
+
+                            <span>
+                                JPG, PNG or WebP
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ACTION BUTTONS -->
+
+                <div class="editor-actions">
+
+
+                    <button
+                        type="button"
+                        class="draft-btn"
+                        id="saveDraftButton"
+                    >
+                        Save Draft
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="publish-btn"
+                    >
+                        Publish News
+                    </button>
+
+
+                </div>
+
+
+            </form>
+
+        </section>
+
+
+
+        <!-- =========================================
+             NEWS LIST
+        ========================================== -->
+
+        <section class="news-list">
+
+
+            <div class="section-heading">
+
+
+                <div>
+
+                    <span class="eyebrow">
+                        YOUR CONTENT
+                    </span>
+
+                    <h2>
+                        News Articles
+                    </h2>
+
+                </div>
+
+
+
+                <select id="filterCategory">
+
+                    <option value="all">
+                        All Categories
+                    </option>
+
+                    <option value="Local Business">
+                        Local Business
+                    </option>
+
+                    <option value="International Business">
+                        International Business
+                    </option>
+
+                    <option value="Market">
+                        Market
+                    </option>
+
+                    <option value="Local Market">
+                        Local Market
+                    </option>
+
+                </select>
+
+
+            </div>
+
+
+
+            <!-- =====================================
+                 ARTICLES CONTAINER
+            ====================================== -->
+
+            <div id="newsContainer">
+
+
+                <div class="empty-news">
+
+                    <div class="empty-icon">
+                        +
+                    </div>
+
+                    <h3>
+                        No news articles yet
+                    </h3>
+
+                    <p>
+                        Create your first JKWI news article.
+                    </p>
+
+
+                    <button
+                        type="button"
+                        id="createNewsButton"
+                    >
+                        Create News
+                    </button>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         EXTERNAL JAVASCRIPT
+         
+         IMPORTANT:
+         No inline JavaScript here.
+         This fixes the CSP error.
+    ========================================== -->
+
+    <script src="../js/news-admin.js"></script>
+
+
+</body>
+
+</html>

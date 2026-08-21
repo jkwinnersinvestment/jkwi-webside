@@ -80,7 +80,7 @@ document.querySelectorAll(".dropdown > a").forEach(item => {
     });
 
 });
-const API_KEY = 2ef03a84d72f46b498defbe0d6aed423
+const API_KEY = f03a84d72f46b498defbe0d6aed423
 
 async function getPrice(symbol, elementId) {
     try {
