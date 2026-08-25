@@ -1,65 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Create Investor Account</title>
+    <meta charset="UTF-8">
 
-<link rel="stylesheet" href="css/style.css">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
+    <title>Register | JK Winners Investment</title>
+
+    <link
+        rel="stylesheet"
+        href="css/register.css"
+    >
 </head>
+
 <body>
 
-<div class="login-container">
+    <main class="register-page">
 
-<div class="login-box">
+        <section class="register-card">
 
-<img src="images/logo.png" class="login-logo">
+            <!-- LOGO -->
 
-<h2>Create Investor Account</h2>
+            <img
+                src="assets/images/jkwi-logo.png"
+                alt="JK Winners Investment"
+                class="jkwi-logo"
+            >
 
-<p>Join JK Winners Investment</p>
 
-<form action="/api/auth/register" method="POST">
-<input
-type="text"
-name="fullname"
-placeholder="Full Name"
-required>
+            <h1>Create Account</h1>
 
-<input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
+            <p class="subtitle">
+                Join JK Winners Investment
+            </p>
 
-<input type="text" id="idnumber" name="idnumber" placeholder="South African ID / Passport" required>
 
-<input type="email" id="email" name="email" placeholder="Email Address" required>
+            <!-- ACCOUNT TYPE -->
 
-<input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+            <div class="account-types">
 
-<input type="password" id="password" name="password" placeholder="Password" required>
+                <button
+                    type="button"
+                    class="account-type active"
+                    data-type="customer"
+                >
+                    Customer
+                </button>
 
-<input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+                <button
+                    type="button"
+                    class="account-type"
+                    data-type="worker"
+                >
+                    Worker
+                </button>
 
-<button type="submit">
+                <button
+                    type="button"
+                    class="account-type"
+                    data-type="partner"
+                >
+                    Partner
+                </button>
 
-Create Account
+            </div>
 
-</button>
 
-</form>
+            <form id="registerForm">
 
-<div class="login-links">
+                <input
+                    type="hidden"
+                    id="accountType"
+                    value="customer"
+                >
 
-<a href="login.html">
 
-Already have an account?
+                <div class="name-row">
 
-</a>
+                    <div class="field">
 
-</div>
+                        <label>
+                            First Name
+                        </label>
 
-</div>
+                        <input
+                            id="firstName"
+                            type="text"
+                            autocomplete="given-name"
+                            required
+                        >
 
-</div>
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            Last Name
+                        </label>
+
+                        <input
+                            id="lastName"
+                            type="text"
+                            autocomplete="family-name"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Email
+                    </label>
+
+                    <input
+                        id="email"
+                        type="email"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Phone Number
+                    </label>
+
+                    <input
+                        id="phone"
+                        type="tel"
+                        inputmode="tel"
+                        autocomplete="tel"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="name-row">
+
+                    <div class="field">
+
+                        <label>
+                            Password
+                        </label>
+
+                        <input
+                            id="password"
+                            type="password"
+                            minlength="8"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            Confirm
+                        </label>
+
+                        <input
+                            id="confirmPassword"
+                            type="password"
+                            minlength="8"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="message"
+                    class="message"
+                ></div>
+
+
+                <button
+                    id="registerButton"
+                    type="submit"
+                >
+                    Create Account
+                </button>
+
+            </form>
+
+
+            <p class="login-link">
+
+                Already registered?
+
+                <a href="login.html">
+                    Sign in
+                </a>
+
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/register.js"></script>
 
 </body>
+
 </html>

@@ -2285,4 +2285,149 @@ LIVE MARKET - MOBILE
         font-size: 9px;
     }
 
+}/* ==========================================
+   JKWI NAV LOGIN / REGISTER
+   Desktop + Mobile
+========================================== */
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Login */
+
+.nav-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 42px;
+    padding: 0 18px;
+
+    color: #111827;
+    background: transparent;
+
+    border: 1px solid rgba(17, 24, 39, 0.18);
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: all 0.25s ease;
+}
+
+.nav-login:hover {
+    background: #f3f4f6;
+    border-color: #111827;
+}
+
+
+/* Register */
+
+.nav-register {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 42px;
+    padding: 0 19px;
+
+    color: #ffffff;
+    background: #111827;
+
+    border: 1px solid #111827;
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: all 0.25s ease;
+}
+
+.nav-register:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+}
+
+
+/* Get in Touch */
+
+.contact-btn {
+    height: 42px;
+    padding: 0 18px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1100px) {
+
+    .nav-right {
+        gap: 7px;
+    }
+
+    .nav-login,
+    .nav-register,
+    .contact-btn {
+        height: 40px;
+        padding: 0 13px;
+        font-size: 13px;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .nav-right {
+        display: none;
+    }
+
+    /*
+       Login/Register will appear inside
+       the mobile navigation if your
+       menu-toggle opens .nav-links.
+    */
+
+    .nav-links {
+        width: 100%;
+    }
+
+}
+
+
+/* ==========================================
+   SMALL PHONES
+========================================== */
+
+@media (max-width: 480px) {
+
+    .nav-login,
+    .nav-register {
+        height: 40px;
+        padding: 0 12px;
+
+        font-size: 13px;
+        border-radius: 7px;
+    }
+
 }
