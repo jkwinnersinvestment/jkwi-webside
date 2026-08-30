@@ -1,476 +1,613 @@
 /* ==========================================
    JKWI NAVIGATION
+   Compact • Responsive • Premium
 ========================================== */
-
 .jkwi-nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 76px;
+    height: 74px;
     z-index: 9999;
-
     background: transparent;
     border-bottom: 1px solid transparent;
-
     transition:
+        height 0.35s ease,
         background-color 0.35s ease,
         box-shadow 0.35s ease,
-        border-color 0.35s ease,
-        height 0.35s ease;
+        border-color 0.35s ease;
+    -webkit-backdrop-filter: blur(0);
+    backdrop-filter: blur(0);
 }
-
 /* ==========================================
-   CONTAINER
+   NAV CONTAINER
 ========================================== */
-
 .nav-container {
     width: min(1200px, 92%);
     height: 100%;
     margin: 0 auto;
-
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    position: relative;
 }
-
 /* ==========================================
    JKWI BRAND
 ========================================== */
-
 .nav-logo {
     display: flex;
     align-items: center;
     gap: 9px;
-
     text-decoration: none;
     flex-shrink: 0;
 }
-
+/* Logo */
 .nav-logo img {
     width: 38px;
     height: 38px;
     object-fit: contain;
     display: block;
-
-    transition: width 0.3s ease, height 0.3s ease;
+    transition:
+        width 0.35s ease,
+        height 0.35s ease;
 }
-
+/* Brand text */
 .nav-brand {
     display: flex;
     flex-direction: column;
     line-height: 1.05;
     white-space: nowrap;
 }
-
 .nav-brand strong {
     color: #ffffff;
     font-size: 14px;
     font-weight: 700;
     letter-spacing: -0.2px;
+    transition: color 0.35s ease;
 }
-
 .nav-brand small {
     color: rgba(255, 255, 255, 0.72);
     font-size: 10px;
     font-weight: 500;
     margin-top: 3px;
+    transition: color 0.35s ease;
 }
-
 /* ==========================================
-   SCROLLED NAV
+   MAIN NAVIGATION
 ========================================== */
-
-.jkwi-nav.scrolled .nav-logo img {
-    width: 36px;
-    height: 36px;
-}
-
-.jkwi-nav.scrolled .nav-brand strong {
-    color: #161b20;
-}
-
-.jkwi-nav.scrolled .nav-brand small {
-    color: #68727c;
-}
-
-/* ==========================================
-   MENU
-========================================== */
-
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 23px;
     margin-left: auto;
-    margin-right: 30px;
+    margin-right: 28px;
 }
-
 .nav-menu > a,
 .nav-dropdown > a {
     position: relative;
-
     display: flex;
     align-items: center;
     gap: 5px;
-
     color: #ffffff;
     text-decoration: none;
-
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
-
     white-space: nowrap;
-
     transition:
         color 0.3s ease,
         opacity 0.3s ease;
 }
-
-/* ==========================================
-   HOVER
-========================================== */
-
+/* Navigation hover */
 .nav-menu > a:hover,
 .nav-dropdown > a:hover {
     opacity: 0.7;
 }
-
 /* ==========================================
-   DROPDOWN
+   DIVISIONS DROPDOWN
 ========================================== */
-
 .nav-dropdown {
     position: relative;
 }
-
-.nav-dropdown > a span {
-    font-size: 13px;
-    transition: transform 0.3s ease;
+.nav-dropdown > a span:last-child {
+    font-size: 12px;
+    transition:
+        transform 0.3s ease;
 }
-
-.nav-dropdown:hover > a span {
+.nav-dropdown:hover > a span:last-child {
     transform: rotate(180deg);
 }
-
+/* Dropdown */
 .dropdown-menu {
     position: absolute;
-    top: calc(100% + 20px);
+    top: calc(100% + 18px);
     left: 50%;
-
     min-width: 210px;
-
-    transform:
-        translate(-50%, -8px);
-
-    background: #ffffff;
-
-    border-radius: 8px;
-
     padding: 8px;
-
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 8px;
+    box-shadow:
+        0 14px 35px rgba(0, 0, 0, 0.12);
     opacity: 0;
     visibility: hidden;
-
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
-
+    transform:
+        translate(-50%, -8px);
     transition:
         opacity 0.25s ease,
-        transform 0.25s ease,
-        visibility 0.25s ease;
+        visibility 0.25s ease,
+        transform 0.25s ease;
 }
-
 .nav-dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
-
     transform:
         translate(-50%, 0);
 }
-
+/* Dropdown links */
 .dropdown-menu a {
     display: block;
-
-    padding: 10px 13px;
-
-    color: #222;
+    padding: 9px 12px;
+    color: #222222;
     text-decoration: none;
-
     font-size: 13px;
     font-weight: 500;
-
     border-radius: 5px;
-
     transition:
-        background 0.2s ease,
+        background-color 0.2s ease,
         color 0.2s ease;
 }
-
 .dropdown-menu a:hover {
-    background: #f2f7fb;
+    background: #f2f8fb;
     color: #009FE3;
 }
-
 /* ==========================================
-   ACTIONS
+   DESKTOP ACCOUNT
 ========================================== */
-
 .nav-actions {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 11px;
+    flex-shrink: 0;
 }
-
 .nav-login {
     color: #ffffff;
     text-decoration: none;
-
     font-size: 13px;
     font-weight: 600;
-
-    transition: color 0.3s ease;
+    transition:
+        color 0.3s ease,
+        opacity 0.3s ease;
 }
-
+.nav-login:hover {
+    opacity: 0.7;
+}
+/* Create Account */
 .nav-account {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
-    height: 38px;
-    padding: 0 16px;
-
+    height: 36px;
+    padding: 0 15px;
     background: #009FE3;
     color: #ffffff;
-
     border-radius: 6px;
-
     text-decoration: none;
-
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
-
+    white-space: nowrap;
     transition:
-        background 0.25s ease,
+        background-color 0.25s ease,
         transform 0.25s ease;
 }
-
 .nav-account:hover {
     background: #008dcc;
     transform: translateY(-1px);
 }
-
 /* ==========================================
    SCROLLED NAVIGATION
 ========================================== */
-
 .jkwi-nav.scrolled {
-    height: 68px;
-
+    height: 66px;
     background: rgba(255, 255, 255, 0.97);
-
-    border-bottom-color: rgba(0, 0, 0, 0.06);
-
+    border-bottom-color:
+        rgba(0, 0, 0, 0.06);
     box-shadow:
-        0 5px 20px rgba(0, 0, 0, 0.07);
-
-    backdrop-filter: blur(10px);
+        0 5px 22px rgba(0, 0, 0, 0.07);
     -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
 }
-
-/* Logo stays clean */
+/* Scrolled logo */
 .jkwi-nav.scrolled .nav-logo img {
-    width: 135px;
+    width: 34px;
+    height: 34px;
 }
-
-/* Dark navigation text */
-
+/* Scrolled brand */
+.jkwi-nav.scrolled .nav-brand strong {
+    color: #161b20;
+}
+.jkwi-nav.scrolled .nav-brand small {
+    color: #68727c;
+}
+/* Scrolled navigation */
 .jkwi-nav.scrolled .nav-menu > a,
 .jkwi-nav.scrolled .nav-dropdown > a {
     color: #1b1f23;
 }
-
+/* Scrolled login */
 .jkwi-nav.scrolled .nav-login {
     color: #1b1f23;
 }
-
 /* ==========================================
-   MOBILE TOGGLE
+   MOBILE ACCOUNT ICON
 ========================================== */
-
-.nav-toggle {
+.mobile-account {
     display: none;
-
-    width: 38px;
-    height: 38px;
-
+    position: relative;
+    flex-shrink: 0;
+}
+.account-toggle {
+    width: 36px;
+    height: 36px;
     padding: 0;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 0;
     background: transparent;
-
     cursor: pointer;
-
+}
+.account-toggle svg {
+    width: 21px;
+    height: 21px;
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition:
+        stroke 0.3s ease,
+        transform 0.25s ease;
+}
+.account-toggle:hover svg {
+    transform: scale(1.06);
+}
+/* Scrolled icon */
+.jkwi-nav.scrolled .account-toggle svg {
+    stroke: #1b1f23;
+}
+/* ==========================================
+   MOBILE ACCOUNT DROPDOWN
+========================================== */
+.account-menu {
+    position: absolute;
+    top: 46px;
+    right: 0;
+    width: 215px;
+    padding: 9px;
+    background: rgba(255, 255, 255, 0.98);
+    border:
+        1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 9px;
+    box-shadow:
+        0 14px 35px rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    transform:
+        translateY(-7px);
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease,
+        transform 0.25s ease;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+.mobile-account.active .account-menu {
+    opacity: 1;
+    visibility: visible;
+    transform:
+        translateY(0);
+}
+/* ==========================================
+   ACCOUNT HEADER
+========================================== */
+.account-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 7px 11px;
+    margin-bottom: 4px;
+    border-bottom:
+        1px solid #eeeeee;
+}
+.account-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #eef8fd;
+}
+.account-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: #009FE3;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.account-title strong {
+    display: block;
+    color: #171b1f;
+    font-size: 13px;
+    font-weight: 700;
+}
+.account-title small {
+    display: block;
+    margin-top: 2px;
+    color: #7a838b;
+    font-size: 10px;
+    font-weight: 400;
+}
+/* ==========================================
+   ACCOUNT LINKS
+========================================== */
+.account-menu > a {
+    display: block;
+    padding: 10px 9px;
+    color: #252a2f;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 5px;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+.account-menu > a:hover {
+    background: #f2f8fb;
+    color: #009FE3;
+}
+/* ==========================================
+   MOBILE HAMBURGER
+========================================== */
+.nav-toggle {
+    display: none;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 5px;
+    flex-shrink: 0;
 }
-
 .nav-toggle span {
-    width: 21px;
+    width: 20px;
     height: 2px;
-
     background: #ffffff;
-
     border-radius: 2px;
-
     transition:
         transform 0.3s ease,
         opacity 0.3s ease,
-        background 0.3s ease;
+        background-color 0.3s ease;
 }
-
+/* Scrolled hamburger */
 .jkwi-nav.scrolled .nav-toggle span {
     background: #1b1f23;
 }
-
+/* ==========================================
+   HAMBURGER ACTIVE
+========================================== */
+.nav-toggle.active span:nth-child(1) {
+    transform:
+        translateY(7px)
+        rotate(45deg);
+}
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+.nav-toggle.active span:nth-child(3) {
+    transform:
+        translateY(-7px)
+        rotate(-45deg);
+}
+/* ==========================================
+   TABLET
+========================================== */
+@media (max-width: 1100px) {
+    .nav-menu {
+        gap: 16px;
+        margin-right: 18px;
+    }
+    .nav-menu > a,
+    .nav-dropdown > a {
+        font-size: 12px;
+    }
+    .nav-account {
+        padding: 0 12px;
+    }
+}
 /* ==========================================
    MOBILE
 ========================================== */
-
-@media (max-width: 1050px) {
-
-    .nav-menu {
-        gap: 17px;
-        margin-right: 20px;
-    }
-
-    .nav-menu > a,
-    .nav-dropdown > a {
-        font-size: 13px;
-    }
-
-    .nav-account {
-        padding: 0 13px;
-    }
-}
-
 @media (max-width: 850px) {
-
+    .jkwi-nav {
+        height: 68px;
+    }
     .nav-container {
         width: 90%;
     }
-
-    .nav-menu,
+    /* Hide desktop menu */
     .nav-actions {
         display: none;
     }
-
+    /* Mobile profile */
+    .mobile-account {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        margin-right: 2px;
+    }
+    /* Hamburger */
     .nav-toggle {
         display: flex;
     }
-
-    .nav-logo img {
-        width: 135px;
-    }
-
-    .jkwi-nav {
-        height: 70px;
-    }
-
-    /* Mobile menu */
-
-    .nav-menu.active {
+    /* Main menu */
+    .nav-menu {
         position: absolute;
-
-        top: 70px;
+        top: 68px;
         left: 0;
-
         width: 100%;
-
-        display: flex;
+        display: none;
         flex-direction: column;
         align-items: stretch;
-
         gap: 0;
-
         margin: 0;
-
-        padding: 10px 5% 18px;
-
-        background: rgba(255, 255, 255, 0.98);
-
+        padding: 8px 5% 16px;
+        background:
+            rgba(255, 255, 255, 0.98);
         box-shadow:
             0 12px 30px rgba(0, 0, 0, 0.08);
-
-        backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
     }
-
-    .nav-menu.active > a,
-    .nav-menu.active .nav-dropdown > a {
+    /* Open menu */
+    .nav-menu.active {
+        display: flex;
+    }
+    /* Mobile links */
+    .nav-menu > a,
+    .nav-dropdown > a {
+        width: 100%;
+        padding: 12px 0;
         color: #1b1f23;
-
-        padding: 13px 0;
-
         font-size: 14px;
+        border-bottom:
+            1px solid rgba(0, 0, 0, 0.05);
     }
-
-    .nav-menu.active .nav-dropdown {
+    /* Dropdown container */
+    .nav-menu .nav-dropdown {
         width: 100%;
     }
-
-    .nav-menu.active .dropdown-menu {
+    /* Mobile dropdown */
+    .nav-menu .dropdown-menu {
         position: static;
-
         width: 100%;
-
+        min-width: 0;
+        display: none;
+        padding: 3px 0 7px;
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
         transform: none;
-
         opacity: 1;
         visibility: visible;
-
-        display: none;
-
-        box-shadow: none;
-
-        border-radius: 0;
-
-        padding: 0 0 5px;
-
-        background: transparent;
     }
-
-    .nav-menu.active .nav-dropdown:hover .dropdown-menu {
+    /* Open divisions */
+    .nav-menu .nav-dropdown:hover .dropdown-menu {
+        display: none;
+    }
+    .nav-menu .nav-dropdown.active .dropdown-menu {
         display: block;
     }
-
-    .nav-menu.active .dropdown-menu a {
+    /* Mobile dropdown links */
+    .nav-menu .dropdown-menu a {
         padding: 9px 15px;
+        color: #5d666e;
         font-size: 13px;
     }
+    .nav-menu .dropdown-menu a:hover {
+        background: #f2f8fb;
+        color: #009FE3;
+    }
+    /* ======================================
+       MOBILE BRAND
+    ====================================== */
+    .nav-logo {
+        gap: 8px;
+    }
+    .nav-logo img {
+        width: 34px;
+        height: 34px;
+    }
+    .nav-brand strong {
+        font-size: 13px;
+    }
+    .nav-brand small {
+        font-size: 9px;
+    }
+    /* ======================================
+       MOBILE SCROLLED
+    ====================================== */
+    .jkwi-nav.scrolled {
+        height: 62px;
+    }
+    .jkwi-nav.scrolled .nav-logo img {
+        width: 32px;
+        height: 32px;
+    }
 }
-
 /* ==========================================
    SMALL PHONES
 ========================================== */
-
 @media (max-width: 480px) {
-
+    .nav-container {
+        width: 92%;
+    }
+    .nav-logo {
+        gap: 7px;
+    }
     .nav-logo img {
-        width: 125px;
+        width: 32px;
+        height: 32px;
     }
-
-    .jkwi-nav.scrolled .nav-logo img {
-        width: 120px;
+    .nav-brand strong {
+        font-size: 12px;
     }
-
-    .jkwi-nav {
-        height: 66px;
+    .nav-brand small {
+        font-size: 8px;
     }
-
-    .jkwi-nav.scrolled {
-        height: 62px;
+    .account-toggle,
+    .nav-toggle {
+        width: 34px;
+        height: 34px;
+    }
+    .account-toggle svg {
+        width: 20px;
+        height: 20px;
+    }
+    .nav-toggle span {
+        width: 19px;
+    }
+    .account-menu {
+        width: 205px;
+        top: 44px;
+    }
+}
+/* ==========================================
+   VERY SMALL PHONES
+========================================== */
+@media (max-width: 360px) {
+    .nav-brand strong {
+        font-size: 11px;
+    }
+    .nav-brand small {
+        font-size: 8px;
+    }
+    .nav-logo img {
+        width: 30px;
+        height: 30px;
+    }
+    .account-toggle,
+    .nav-toggle {
+        width: 32px;
+        height: 32px;
     }
 }
 /*==================================================

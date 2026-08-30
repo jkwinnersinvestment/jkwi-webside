@@ -39,95 +39,181 @@
 <body>
 
 
-  <!-- ==========================
+<!-- ==========================================
      JKWI NAVIGATION
-========================== -->
-
+========================================== -->
 <header class="jkwi-nav" id="jkwiNav">
-
     <div class="nav-container">
-
-      <a href="index.html" class="nav-logo">
-    <img src="images/logo.png" alt="JK Winners Investment">
-
-    <span class="nav-brand">
-        <strong>JK Winners</strong>
-        <small>Investment</small>
-    </span>
-</a>
+        <!-- ==================================
+             BRAND
+        =================================== -->
+        <a href="index.html" class="nav-logo">
+            <img
+                src="images/logo.png"
+                alt="JK Winners Investment"
+            >
+            <span class="nav-brand">
+                <strong>JK Winners</strong>
+                <small>Investment</small>
+            </span>
+        </a>
+        <!-- ==================================
+             MAIN NAVIGATION
+        =================================== -->
         <nav class="nav-menu" id="navMenu">
-
-            <a href="index.html">Home</a>
-
-            <a href="about.html">About</a>
-
+            <a href="index.html">
+                Home
+            </a>
+            <a href="about.html">
+                About
+            </a>
+            <!-- DIVISIONS -->
             <div class="nav-dropdown">
-
                 <a href="divisions.html">
-                    Divisions
+                    <span>Divisions</span>
                     <span>⌄</span>
                 </a>
-
                 <div class="dropdown-menu">
-
-                    <a href="mining.html">Mining</a>
-                    <a href="infrastructure.html">Infrastructure</a>
-                    <a href="finance.html">Finance</a>
-                    <a href="legal.html">Legal</a>
-                    <a href="media.html">Media</a>
-                    <a href="social-development.html">Social Development</a>
+                    <a href="mining.html">
+                        Mining
+                    </a>
+                    <a href="infrastructure.html">
+                        Infrastructure
+                    </a>
+                    <a href="finance.html">
+                        Finance
+                    </a>
+                    <a href="legal.html">
+                        Legal
+                    </a>
+                    <a href="media.html">
+                        Media
+                    </a>
+                    <a href="social-development.html">
+                        Social Development
+                    </a>
                     <a href="professional-services.html">
                         Professional Services
                     </a>
-                    <a href="farming.html">Farming</a>
-
+                    <a href="farming.html">
+                        Farming
+                    </a>
                 </div>
-
             </div>
-
-            <a href="projects.html">Projects</a>
-
-            <a href="markets.html">Markets</a>
-
-            <a href="news.html">News</a>
-
-            <a href="investors.html">Investors</a>
-
+            <a href="projects.html">
+                Projects
+            </a>
+            <a href="markets.html">
+                Markets
+            </a>
+            <a href="news.html">
+                News
+            </a>
+            <a href="investors.html">
+                Investors
+            </a>
             <a href="ai-assistant.html" class="ai-nav-link">
                 JKWI AI
             </a>
-
         </nav>
-
-
+        <!-- ==================================
+             DESKTOP ACCOUNT ACTIONS
+        =================================== -->
         <div class="nav-actions">
-
-            <a href="login.html" class="nav-login">
+            <a
+                href="login.html"
+                class="nav-login"
+            >
                 Login
             </a>
-
-            <a href="register.html" class="nav-account">
+            <a
+                href="register.html"
+                class="nav-account"
+            >
                 Create Account
             </a>
-
         </div>
-
-
+        <!-- ==================================
+             MOBILE ACCOUNT
+        =================================== -->
+        <div class="mobile-account">
+            <button
+                class="account-toggle"
+                id="accountToggle"
+                type="button"
+                aria-label="Account"
+                aria-expanded="false"
+            >
+                <!-- Person / Profile Icon -->
+                <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                >
+                    <circle
+                        cx="12"
+                        cy="8"
+                        r="3.5"
+                    ></circle>
+                    <path
+                        d="M5 20c.8-4 3.2-6 7-6s6.2 2 7 6"
+                    ></path>
+                </svg>
+            </button>
+            <!-- MOBILE ACCOUNT DROPDOWN -->
+            <div
+                class="account-menu"
+                id="accountMenu"
+            >
+                <!-- Account Header -->
+                <div class="account-title">
+                    <span class="account-icon">
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <circle
+                                cx="12"
+                                cy="8"
+                                r="3.5"
+                            ></circle>
+                            <path
+                                d="M5 20c.8-4 3.2-6 7-6s6.2 2 7 6"
+                            ></path>
+                        </svg>
+                    </span>
+                    <div>
+                        <strong>
+                            Sign In
+                        </strong>
+                        <small>
+                            Access your JKWI account
+                        </small>
+                    </div>
+                </div>
+                <!-- Account Links -->
+                <a href="login.html">
+                    Login
+                </a>
+                <a href="register.html">
+                    Create Account
+                </a>
+            </div>
+        </div>
+        <!-- ==================================
+             MOBILE HAMBURGER
+        =================================== -->
         <button
             class="nav-toggle"
             id="navToggle"
             type="button"
             aria-label="Open menu"
+            aria-expanded="false"
         >
-
             <span></span>
             <span></span>
             <span></span>
-
         </button>
-
     </div>
-
 </header>
 <!--==================================================
 SECTION 02 - HERO
