@@ -2943,86 +2943,57 @@ LIVE MARKET - MOBILE
 }
 
 }
-/* =========================================
-   JKWI VIDEO SECTION
-========================================= */
-
 .jkwi-video-section {
     width: 100%;
-    max-width: 1000px;
-
-    margin: 0 auto;
-    padding: 45px 20px;
-
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
     background: #ffffff;
     box-sizing: border-box;
 }
-
-
-/* =========================================
-   VIDEO HEADING
-========================================= */
 
 .video-heading {
     display: flex;
     align-items: baseline;
     gap: 15px;
 
-    margin-bottom: 18px;
-    padding-bottom: 10px;
+    width: 100%;
+    padding: 20px;
+
+    margin: 0;
+    box-sizing: border-box;
 
     border-bottom: 1px solid #dddddd;
 }
 
 .video-heading span {
     color: #009FE3;
-
     font-size: 11px;
     font-weight: 700;
-
     letter-spacing: 2px;
 }
 
 .video-heading h2 {
     margin: 0;
-
     color: #111111;
-
     font-size: 28px;
     font-weight: 600;
-
     letter-spacing: 2px;
 }
-
-
-/* =========================================
-   VIDEO CONTAINER
-========================================= */
 
 .jkwi-video {
     position: relative;
 
     width: 100%;
+    height: 55vh;
 
-    /*
-       Wide shape matching your video
-       and removing unnecessary black space.
-    */
-    aspect-ratio: 5 / 1;
+    min-height: 300px;
+    max-height: 700px;
 
     overflow: hidden;
 
-    background: #ffffff;
-
-    border-radius: 0;
-
-    box-sizing: border-box;
+    background: #000000;
 }
-
-
-/* =========================================
-   VIDEO
-========================================= */
 
 .jkwi-video video {
     display: block;
@@ -3031,71 +3002,43 @@ LIVE MARKET - MOBILE
     height: 100%;
 
     object-fit: cover;
-
-    /*
-       Keeps the JKWI branding centered
-    */
     object-position: center center;
 
     border: none;
     outline: none;
-
-    background: #ffffff;
 }
 
 
-/* =========================================
-   REMOVE VIDEO OUTLINE
-========================================= */
-
-.jkwi-video video:focus {
-    outline: none;
-}
-
-
-/* =========================================
+/* ================================
    TABLET
-========================================= */
+================================ */
 
 @media (max-width: 900px) {
 
-    .jkwi-video-section {
-        padding: 40px 18px;
+    .jkwi-video {
+        height: 50vh;
+        min-height: 260px;
     }
 
     .video-heading h2 {
         font-size: 25px;
     }
-
-    .jkwi-video {
-        aspect-ratio: 5 / 1;
-    }
-
 }
 
 
-/* =========================================
+/* ================================
    MOBILE
-========================================= */
+================================ */
 
 @media (max-width: 600px) {
 
     .jkwi-video-section {
         width: 100%;
-
-        padding: 32px 15px;
-
-        margin: 0;
     }
 
-
-    /* Heading */
-
     .video-heading {
+        padding: 16px 15px;
         gap: 10px;
-
-        margin-bottom: 12px;
-        padding-bottom: 8px;
     }
 
     .video-heading span {
@@ -3108,21 +3051,14 @@ LIVE MARKET - MOBILE
         letter-spacing: 1.5px;
     }
 
-
-    /* Video */
-
     .jkwi-video {
         width: 100%;
+        height: 45vh;
 
-        /*
-           Keeps the video very wide
-           on phones.
-        */
-        aspect-ratio: 5 / 1;
+        min-height: 220px;
+        max-height: none;
 
         overflow: hidden;
-
-        background: #ffffff;
     }
 
     .jkwi-video video {
@@ -3131,23 +3067,18 @@ LIVE MARKET - MOBILE
 
         object-fit: cover;
         object-position: center center;
-
-        display: block;
-
-        background: #ffffff;
     }
-
 }
 
 
-/* =========================================
-   VERY SMALL PHONES
-========================================= */
+/* ================================
+   SMALL PHONES
+================================ */
 
 @media (max-width: 380px) {
 
-    .jkwi-video-section {
-        padding: 28px 12px;
+    .video-heading {
+        padding: 14px 12px;
     }
 
     .video-heading h2 {
@@ -3155,9 +3086,9 @@ LIVE MARKET - MOBILE
     }
 
     .jkwi-video {
-        aspect-ratio: 5 / 1;
+        height: 42vh;
+        min-height: 200px;
     }
-
 }.equipment-market {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
