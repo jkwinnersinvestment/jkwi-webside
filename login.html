@@ -2,153 +2,384 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-    <title>Login | JK Winners Investment</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-    <link
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
-    <link
-        rel="stylesheet"
-        href="css/login.css"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JKWI News Staff Login</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #f4f8fb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 430px;
+            background: white;
+            border-radius: 18px;
+            padding: 35px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.10);
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 18px;
+            border-radius: 15px;
+            background: #009FE3;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            font-weight: 800;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 26px;
+            color: #111;
+            margin-bottom: 7px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            height: 50px;
+            border: 1px solid #d9dfe4;
+            border-radius: 10px;
+            padding: 0 15px;
+            font-size: 15px;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        input:focus {
+            border-color: #009FE3;
+            box-shadow: 0 0 0 3px rgba(0, 159, 227, 0.10);
+        }
+
+        .password-box {
+            position: relative;
+        }
+
+        .password-box input {
+            padding-right: 65px;
+        }
+
+        .show-password {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            background: transparent;
+            color: #009FE3;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        button.login-btn {
+            width: 100%;
+            height: 52px;
+            border: none;
+            border-radius: 10px;
+            background: #009FE3;
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button.login-btn:hover {
+            background: #008bc7;
+        }
+
+        .error {
+            display: none;
+            background: #fff0f0;
+            color: #c62828;
+            border: 1px solid #ffd0d0;
+            padding: 12px;
+            border-radius: 9px;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            color: #999;
+            font-size: 12px;
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 28px 22px;
+            }
+
+            h1 {
+                font-size: 23px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <main class="login-page">
-        <div class="login-background"></div>
-        <section class="login-card">
-            <!-- LOGO -->
-            <a
-                href="index.html"
-                class="login-logo"
-            >
-                <img
-                    src="images/logo.png"
-                    alt="JK Winners Investment Logo"
+
+    <div class="login-container">
+
+        <div class="logo">
+            JKWI
+        </div>
+
+        <h1>News Staff Login</h1>
+
+        <p class="subtitle">
+            JK Winners Investment — Newsroom
+        </p>
+
+        <div id="errorMessage" class="error">
+            Incorrect username or password.
+        </div>
+
+        <form id="loginForm">
+
+            <div class="input-group">
+                <label for="username">Username</label>
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter your username"
+                    autocomplete="username"
+                    required
                 >
-            </a>
-            <!-- HEADING -->
-            <div class="login-heading">
-                <span>
-                    JK WINNERS INVESTMENT
-                </span>
-                <h1>
-                    Welcome Back
-                </h1>
-                <p>
-                    Sign in to access your JKWI account.
-                </p>
             </div>
-            <!-- LOGIN FORM -->
-            <form
-                class="login-form"
-                id="loginForm"
-            >
-                <!-- WINNERS ID -->
-                <div class="form-group">
-                    <label for="winnersId">
-                        Winners ID
-                    </label>
+
+            <div class="input-group">
+
+                <label for="password">Password</label>
+
+                <div class="password-box">
+
                     <input
-                        type="text"
-                        id="winnersId"
-                        name="winnersId"
-                        placeholder="Enter your 10-digit Winners ID"
-                        inputmode="numeric"
-                        maxlength="10"
-                        pattern="[0-9]{10}"
-                        autocomplete="username"
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
                         required
                     >
-                    <small class="input-help">
-                        Your Winners ID must contain 10 digits.
-                    </small>
+
+                    <button
+                        type="button"
+                        class="show-password"
+                        id="showPassword"
+                    >
+                        Show
+                    </button>
+
                 </div>
-                <!-- PASSWORD -->
-                <div class="form-group">
-                    <label for="password">
-                        Password
-                    </label>
-                    <div class="password-wrapper">
-                        <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            placeholder="Enter your password"
-                            autocomplete="current-password"
-                            required
-                        >
-                        <button
-                            type="button"
-                            class="password-toggle"
-                            id="passwordToggle"
-                        >
-                            Show
-                        </button>
-                    </div>
-                </div>
-                <!-- OPTIONS -->
-                <div class="login-options">
-                    <label class="remember">
-                        <input
-                            type="checkbox"
-                            id="remember"
-                            name="remember"
-                        >
-                        <span>
-                            Remember me
-                        </span>
-                    </label>
-                    <a href="#">
-                        Forgot password?
-                    </a>
-                </div>
-                <!-- LOGIN BUTTON -->
-                <button
-                    type="submit"
-                    class="login-button"
-                    id="loginButton"
-                >
-                    <span id="loginButtonText">
-                        Sign In
-                    </span>
-                    <span
-                        class="login-spinner"
-                        id="loginSpinner"
-                    ></span>
-                </button>
-                <!-- MESSAGE -->
-                <div
-                    class="login-message"
-                    id="loginMessage"
-                ></div>
-            </form>
-            <!-- FOOTER -->
-            <div class="login-footer">
-                <p>
-                    Don't have an account?
-                    <a href="register.html">
-                        Create an account
-                    </a>
-                </p>
-                <a
-                    href="index.html"
-                    class="back-home"
-                >
-                    ← Back to JKWI
-                </a>
+
             </div>
-        </section>
-    </main>
-    <script src="js/login.js"></script>
+
+            <button
+                type="submit"
+                class="login-btn"
+            >
+                Login
+            </button>
+
+        </form>
+
+        <div class="footer">
+            JK Winners Investment © 2026
+        </div>
+
+    </div>
+
+
+    <script>
+
+        /*
+        ==========================================
+        JKWI NEWS STAFF ACCOUNTS
+        ==========================================
+        FRONTEND PROTOTYPE ONLY
+        ==========================================
+        */
+
+        const staffAccounts = [
+
+            {
+                username: "newsmanager",
+                password: "JKWINewsManager01",
+                name: "News Manager",
+                role: "news-manager"
+            },
+
+            {
+                username: "reporter01",
+                password: "JKWIReporter01",
+                name: "News Reporter 1",
+                role: "news-reporter"
+            },
+
+            {
+                username: "reporter02",
+                password: "JKWIReporter02",
+                name: "News Reporter 2",
+                role: "news-reporter"
+            },
+
+            {
+                username: "reporter03",
+                password: "JKWIReporter03",
+                name: "News Reporter 3",
+                role: "news-reporter"
+            },
+
+            {
+                username: "reporter04",
+                password: "JKWIReporter04",
+                name: "News Reporter 4",
+                role: "news-reporter"
+            }
+
+        ];
+
+
+        const loginForm = document.getElementById("loginForm");
+        const usernameInput = document.getElementById("username");
+        const passwordInput = document.getElementById("password");
+        const errorMessage = document.getElementById("errorMessage");
+        const showPassword = document.getElementById("showPassword");
+
+
+        /*
+        SHOW / HIDE PASSWORD
+        */
+
+        showPassword.addEventListener("click", function () {
+
+            if (passwordInput.type === "password") {
+
+                passwordInput.type = "text";
+                showPassword.textContent = "Hide";
+
+            } else {
+
+                passwordInput.type = "password";
+                showPassword.textContent = "Show";
+
+            }
+
+        });
+
+
+        /*
+        LOGIN
+        */
+
+        loginForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const username = usernameInput.value.trim();
+            const password = passwordInput.value;
+
+            const account = staffAccounts.find(function (staff) {
+
+                return (
+                    staff.username === username &&
+                    staff.password === password
+                );
+
+            });
+
+
+            if (!account) {
+
+                errorMessage.style.display = "block";
+
+                passwordInput.value = "";
+
+                return;
+            }
+
+
+            /*
+            SAVE LOGGED-IN STAFF
+            */
+
+            localStorage.setItem(
+                "jkwiLoggedInStaff",
+                JSON.stringify(account)
+            );
+
+
+            /*
+            REDIRECT ACCORDING TO ROLE
+            */
+
+            if (account.role === "news-manager") {
+
+                window.location.href = "news-manager.html";
+
+            }
+
+            else if (account.role === "news-reporter") {
+
+                window.location.href = "news-reporter.html";
+
+            }
+
+        });
+
+
+        /*
+        HIDE ERROR WHEN USER STARTS TYPING AGAIN
+        */
+
+        usernameInput.addEventListener("input", function () {
+            errorMessage.style.display = "none";
+        });
+
+        passwordInput.addEventListener("input", function () {
+            errorMessage.style.display = "none";
+        });
+
+    </script>
+
 </body>
 </html>

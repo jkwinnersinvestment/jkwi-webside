@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JKWI News Dashboard</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7f9;
+            color: #222;
+        }
+
+        header {
+            height: 70px;
+            background: white;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 25px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            color: #009FE3;
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        .worker-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 14px;
+        }
+
+        .role {
+            color: #009FE3;
+            font-weight: bold;
+        }
+
+        .logout {
+            border: none;
+            background: #eee;
+            padding: 9px 15px;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+        .layout {
+            display: flex;
+            min-height: calc(100vh - 70px);
+        }
+
+        aside {
+            width: 240px;
+            background: white;
+            border-right: 1px solid #ddd;
+            padding: 20px 12px;
+        }
+
+        aside h3 {
+            font-size: 12px;
+            color: #999;
+            margin: 10px 12px;
+            text-transform: uppercase;
+        }
+
+        .nav-btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background: transparent;
+            text-align: left;
+            border-radius: 7px;
+            cursor: pointer;
+            margin-bottom: 4px;
+            font-size: 14px;
+        }
+
+        .nav-btn:hover,
+        .nav-btn.active {
+            background: #eaf7fc;
+            color: #009FE3;
+        }
+
+        main {
+            flex: 1;
+            padding: 30px;
+            max-width: 1400px;
+        }
+
+        .welcome {
+            margin-bottom: 25px;
+        }
+
+        .welcome h1 {
+            font-size: 28px;
+            margin-bottom: 7px;
+        }
+
+        .welcome p {
+            color: #777;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #e5e5e5;
+        }
+
+        .card span {
+            display: block;
+            color: #888;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .card strong {
+            font-size: 28px;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .panel {
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .panel h2 {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 7px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 7px;
+            padding: 12px;
+            margin-bottom: 18px;
+            font-size: 14px;
+        }
+
+        textarea {
+            min-height: 220px;
+            resize: vertical;
+        }
+
+        .primary {
+            background: #009FE3;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .secondary {
+            background: #eee;
+            color: #222;
+            border: none;
+            border-radius: 7px;
+            padding: 12px 20px;
+            cursor: pointer;
+            margin-left: 8px;
+        }
+
+        .news-item {
+            border-bottom: 1px solid #eee;
+            padding: 16px 0;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-item h3 {
+            margin-bottom: 6px;
+        }
+
+        .news-item small {
+            color: #888;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #eaf7fc;
+            color: #009FE3;
+            padding: 4px 8px;
+            border-radius: 5px;
+            font-size: 11px;
+            margin-left: 8px;
+        }
+
+        @media (max-width: 900px) {
+
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            aside {
+                width: 190px;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            header {
+                padding: 0 15px;
+            }
+
+            .worker-info {
+                font-size: 12px;
+            }
+
+            aside {
+                display: none;
+            }
+
+            main {
+                padding: 18px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        JK Winners Investment — News
+    </div>
+
+    <div class="worker-info">
+
+        <div>
+            <strong id="workerName">Worker</strong>
+            <span class="role" id="workerRole"></span>
+        </div>
+
+        <button class="logout" onclick="logout()">
+            Logout
+        </button>
+
+    </div>
+
+</header>
+
+
+<div class="layout">
+
+    <aside>
+
+        <h3>News</h3>
+
+        <button class="nav-btn active" onclick="showSection('dashboard', this)">
+            Dashboard
+        </button>
+
+        <button class="nav-btn" onclick="showSection('create', this)">
+            Create Article
+        </button>
+
+        <button class="nav-btn" onclick="showSection('drafts', this)">
+            Drafts
+        </button>
+
+        <button class="nav-btn" onclick="showSection('published', this)">
+            Published News
+        </button>
+
+
+        <h3>Channels</h3>
+
+        <button class="nav-btn" onclick="filterChannel('Local Business News')">
+            Local Business
+        </button>
+
+        <button class="nav-btn" onclick="filterChannel('International Business News')">
+            International Business
+        </button>
+
+        <button class="nav-btn" onclick="filterChannel('Local Market News')">
+            Local Markets
+        </button>
+
+        <button class="nav-btn" onclick="filterChannel('International Markets News')">
+            International Markets
+        </button>
+
+    </aside>
+
+
+    <main>
+
+
+        <!-- DASHBOARD -->
+
+        <section id="dashboard" class="section active">
+
+            <div class="welcome">
+
+                <h1>News Dashboard</h1>
+
+                <p>
+                    Manage JKWI business and market news.
+                </p>
+
+            </div>
+
+
+            <div class="cards">
+
+                <div class="card">
+                    <span>Total Articles</span>
+                    <strong id="totalArticles">0</strong>
+                </div>
+
+                <div class="card">
+                    <span>Drafts</span>
+                    <strong id="totalDrafts">0</strong>
+                </div>
+
+                <div class="card">
+                    <span>Published</span>
+                    <strong id="totalPublished">0</strong>
+                </div>
+
+                <div class="card">
+                    <span>My Articles</span>
+                    <strong id="myArticles">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="panel">
+
+                <h2>Recent News</h2>
+
+                <div id="recentNews"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CREATE -->
+
+        <section id="create" class="section">
+
+            <div class="panel">
+
+                <h2>Create News Article</h2>
+
+                <form id="articleForm">
+
+                    <label>Headline</label>
+
+                    <input
+                        id="title"
+                        type="text"
+                        placeholder="Enter article headline"
+                        required
+                    >
+
+
+                    <label>News Channel</label>
+
+                    <select id="category" required>
+
+                        <option value="">
+                            Select channel
+                        </option>
+
+                        <option>
+                            Local Business News
+                        </option>
+
+                        <option>
+                            International Business News
+                        </option>
+
+                        <option>
+                            Local Market News
+                        </option>
+
+                        <option>
+                            International Markets News
+                        </option>
+
+                    </select>
+
+
+                    <label>Short Description</label>
+
+                    <textarea
+                        id="excerpt"
+                        style="min-height:100px"
+                        placeholder="Short description of the story"
+                        required
+                    ></textarea>
+
+
+                    <label>Article</label>
+
+                    <textarea
+                        id="content"
+                        placeholder="Write the full article here..."
+                        required
+                    ></textarea>
+
+
+                    <label>Source Name</label>
+
+                    <input
+                        id="source"
+                        type="text"
+                        placeholder="Example: Reuters"
+                    >
+
+
+                    <label>Source URL</label>
+
+                    <input
+                        id="sourceUrl"
+                        type="url"
+                        placeholder="https://..."
+                    >
+
+
+                    <button
+                        type="submit"
+                        class="primary"
+                    >
+                        Save Draft
+                    </button>
+
+                   <button
+                     type="button"
+                     class="secondary"
+                     onclick="submitForReview()">
+                     Submit for Review
+                   </button>>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- DRAFTS -->
+
+        <section id="drafts" class="section">
+
+            <div class="panel">
+
+                <h2>Draft Articles</h2>
+
+                <div id="draftList"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PUBLISHED -->
+
+        <section id="published" class="section">
+
+            <div class="panel">
+
+                <h2>Published News</h2>
+
+                <div id="publishedList"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CHANNEL -->
+
+        <section id="channel" class="section">
+
+            <div class="panel">
+
+                <h2 id="channelTitle"></h2>
+
+                <div id="channelList"></div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<script>
+
+
+// ==========================================
+// CHECK LOGIN
+// ==========================================
+
+const workerData =
+    localStorage.getItem("jkwiWorker");
+
+if (!workerData) {
+
+    window.location.href = "industry-login.html";
+
+}
+
+const worker =
+    JSON.parse(workerData);
+
+
+document.getElementById("workerName").textContent =
+    worker.name;
+
+document.getElementById("workerRole").textContent =
+    " • " + worker.role;
+
+
+// ==========================================
+// TEMPORARY NEWS STORAGE
+// ==========================================
+
+let articles =
+    JSON.parse(
+        localStorage.getItem("jkwiNews")
+    ) || [];
+
+
+// ==========================================
+// NAVIGATION
+// ==========================================
+
+function showSection(id, button) {
+
+    document
+        .querySelectorAll(".section")
+        .forEach(section => {
+
+            section.classList.remove("active");
+
+        });
+
+
+    document
+        .getElementById(id)
+        .classList.add("active");
+
+
+    document
+        .querySelectorAll(".nav-btn")
+        .forEach(btn => {
+
+            btn.classList.remove("active");
+
+        });
+
+
+    if (button) {
+
+        button.classList.add("active");
+
+    }
+
+    refreshDashboard();
+
+}
+
+
+// ==========================================
+// SAVE ARTICLE
+// ==========================================
+
+document
+    .getElementById("articleForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        saveArticle("draft");
+
+    });
+
+
+function saveArticle(status) {
+
+    const article = {
+
+        id: Date.now(),
+
+        title:
+            document.getElementById("title").value,
+
+        category:
+            document.getElementById("category").value,
+
+        excerpt:
+            document.getElementById("excerpt").value,
+
+        content:
+            document.getElementById("content").value,
+
+        source:
+            document.getElementById("source").value,
+
+        sourceUrl:
+            document.getElementById("sourceUrl").value,
+
+        author:
+            worker.name,
+
+        status:
+            status,
+
+        createdAt:
+            new Date().toLocaleString()
+
+    };
+
+
+    articles.unshift(article);
+
+    localStorage.setItem(
+        "jkwiNews",
+        JSON.stringify(articles)
+    );
+
+
+    document
+        .getElementById("articleForm")
+        .reset();
+
+
+    alert(
+        status === "published"
+        ? "Article published successfully."
+        : "Article saved as draft."
+    );
+
+
+    refreshDashboard();
+
+}
+
+
+function submitForReview() {
+    saveArticle("pending");
+}
+
+// ==========================================
+// DASHBOARD
+// ==========================================
+
+function refreshDashboard() {
+
+    const drafts =
+        articles.filter(
+            article => article.status === "draft"
+        );
+
+    const published =
+        articles.filter(
+            article => article.status === "published"
+        );
+
+
+    const mine =
+        articles.filter(
+            article => article.author === worker.name
+        );
+
+
+    document.getElementById("totalArticles")
+        .textContent = articles.length;
+
+    document.getElementById("totalDrafts")
+        .textContent = drafts.length;
+
+    document.getElementById("totalPublished")
+        .textContent = published.length;
+
+    document.getElementById("myArticles")
+        .textContent = mine.length;
+
+
+    renderRecentNews();
+
+    renderDrafts();
+
+    renderPublished();
+
+}
+
+
+// ==========================================
+// RECENT NEWS
+// ==========================================
+
+function renderRecentNews() {
+
+    const container =
+        document.getElementById("recentNews");
+
+
+    const latest =
+        articles.slice(0, 5);
+
+
+    if (!latest.length) {
+
+        container.innerHTML =
+            "<p>No articles yet.</p>";
+
+        return;
+
+    }
+
+
+    container.innerHTML =
+        latest.map(article => `
+
+            <div class="news-item">
+
+                <h3>
+                    ${escapeHTML(article.title)}
+
+                    <span class="badge">
+                        ${escapeHTML(article.status)}
+                    </span>
+                </h3>
+
+                <small>
+                    ${escapeHTML(article.category)}
+                    •
+                    ${escapeHTML(article.author)}
+                    •
+                    ${escapeHTML(article.createdAt)}
+                </small>
+
+            </div>
+
+        `).join("");
+
+}
+
+
+// ==========================================
+// DRAFTS
+// ==========================================
+
+function renderDrafts() {
+
+    const container =
+        document.getElementById("draftList");
+
+
+    const drafts =
+        articles.filter(
+            article => article.status === "draft"
+        );
+
+
+    if (!drafts.length) {
+
+        container.innerHTML =
+            "<p>No draft articles.</p>";
+
+        return;
+
+    }
+
+
+    container.innerHTML =
+        drafts.map(article => `
+
+            <div class="news-item">
+
+                <h3>
+                    ${escapeHTML(article.title)}
+                </h3>
+
+                <small>
+                    ${escapeHTML(article.category)}
+                    •
+                    ${escapeHTML(article.author)}
+                </small>
+
+            </div>
+
+        `).join("");
+
+}
+
+
+// ==========================================
+// PUBLISHED
+// ==========================================
+
+function renderPublished() {
+
+    const container =
+        document.getElementById("publishedList");
+
+
+    const published =
+        articles.filter(
+            article => article.status === "published"
+        );
+
+
+    if (!published.length) {
+
+        container.innerHTML =
+            "<p>No published articles.</p>";
+
+        return;
+
+    }
+
+
+    container.innerHTML =
+        published.map(article => `
+
+            <div class="news-item">
+
+                <h3>
+                    ${escapeHTML(article.title)}
+                </h3>
+
+                <small>
+                    ${escapeHTML(article.category)}
+                    •
+                    ${escapeHTML(article.author)}
+                </small>
+
+                <p style="margin-top:8px;color:#666">
+                    ${escapeHTML(article.excerpt)}
+                </p>
+
+            </div>
+
+        `).join("");
+
+}
+
+
+// ==========================================
+// CHANNEL FILTER
+// ==========================================
+
+function filterChannel(channel) {
+
+    document
+        .querySelectorAll(".section")
+        .forEach(section => {
+
+            section.classList.remove("active");
+
+        });
+
+
+    document
+        .getElementById("channel")
+        .classList.add("active");
+
+
+    document.getElementById("channelTitle")
+        .textContent = channel;
+
+
+    const results =
+        articles.filter(
+            article => article.category === channel
+        );
+
+
+    const container =
+        document.getElementById("channelList");
+
+
+    if (!results.length) {
+
+        container.innerHTML =
+            "<p>No articles in this channel yet.</p>";
+
+        return;
+
+    }
+
+
+    container.innerHTML =
+        results.map(article => `
+
+            <div class="news-item">
+
+                <h3>
+                    ${escapeHTML(article.title)}
+                </h3>
+
+                <small>
+                    ${escapeHTML(article.author)}
+                    •
+                    ${escapeHTML(article.createdAt)}
+                </small>
+
+                <p style="margin-top:8px">
+                    ${escapeHTML(article.excerpt)}
+                </p>
+
+            </div>
+
+        `).join("");
+
+}
+
+
+// ==========================================
+// SECURITY HELPER
+// ==========================================
+
+function escapeHTML(value) {
+
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+
+// ==========================================
+// LOGOUT
+// ==========================================
+
+function logout() {
+
+    localStorage.removeItem("jkwiWorker");
+
+    window.location.href =
+        "industry-login.html";
+
+}
+
+
+// ==========================================
+// START
+// ==========================================
+
+refreshDashboard();
+
+</script>
+
+</body>
+</html>
